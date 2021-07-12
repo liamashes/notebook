@@ -33,7 +33,7 @@ As Grace Hopper said:
     * Item 3b
 
 ## 5. Images
-![GitHub Logo](images/logo.png)
+![GitHub Logo](./images/logo.png)
 Format: ![Alt Text](url)
 
 ## 6. Links
