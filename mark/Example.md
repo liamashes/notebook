@@ -33,8 +33,8 @@ As Grace Hopper said:
     * Item 3b
 
 ## 5. Images
-![GitHub Logo](./images/logo.png)
-Format: ![Alt Text](url)
+![GitHub Logo](./images/logo.png)  
+Format: !\[Alt Text](url)
 
 ## 6. Links
 http://github.com - automatic!
@@ -42,22 +42,22 @@ http://github.com - automatic!
 
 ## 7. BackSlash Escapes
 Markdown allows you to use backslash escapes to generate literal characters which 
-would otherwise have special meaning in Markdown’s formaing syntax.
+would otherwise have special meaning in Markdown’s formatting syntax.
 
 > Markdown provides backslash escapes for 
-> the following characters:
-> \ backslash
-> ` backtick
-> \* asterisk
-> _ underscore
-> {} curly braces
-> [] square brackets
-> () parentheses
-> \# hash mark
-> \+ plus sign
-> \- minus sign (hyphen)
-> . dot
-> ! exclamation mark
+> the following characters:  
+> \ backslash  
+> ` backtick  
+> \* asterisk  
+> _ underscore  
+> {} curly braces  
+> [] square brackets  
+> () parentheses  
+> \# hash mark  
+> \+ plus sign  
+> \- minus sign (hyphen)  
+> . dot  
+> ! exclamation mark  
 
 ## 8. Username @Mentions
 Typing an @ symbol, followed by a username, will notify that person to come and view the comment.
@@ -66,9 +66,9 @@ within an organization.
 
 ## 9. Issue References
 Any number that refers to an Issue or Pull Request will be automatically converted into a link.
-> #1
-> github-flavored-markdown#1
-> de-funk/github-flavored-markdown#1
+> \#1  
+> github-flavored-markdown#1  
+> de-funk/github-flavored-markdown#1  
 
 ## 10. Emoji
 To see a list of every image we support, check out [EmojiCheatSheet](www.emoji-cheat-sheet.com)
