@@ -1,0 +1,25 @@
+JAVA8 
+	Learning the Java Language：https://docs.oracle.com/javase/tutorial/java/index.html
+	Essential Classes：https://docs.oracle.com/javase/tutorial/essential/index.html
+
+JVM8
+	documentation：https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/
+
+
+CLASS
+	magic number
+	minor version
+	major version
+	constant pool count（start from 1）
+	constant pool
+	access flags
+	this class
+	super class
+	interfaces count
+	interfaces
+	fields count
+	fields
+	methods count
+	methods
+	attributes
+	attributes count
