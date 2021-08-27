@@ -4,8 +4,8 @@
 ### 多层存储（MULTI-TIER STORAGE）
 Apache Ignite® 旨在将内存、磁盘和英特尔傲腾用作活动存储层。内存层允许使用在内存模式下运行的 DRAM 和英特尔® 傲腾™ 来满足数据存储和处理需求。磁盘层是可选的，支持两个选项——您可以将数据保存在外部数据库中或将其保存在 Ignite 本机持久性中。在 AppDirect 模式下运行的 SSD、Flash、HDD 或 Intel Optane 可用作存储设备。
 
-![ignite cluster](./images/ignite_cluster.svg)
-<p><img src="images/ignite_cluster.svg" alt="ignite cluster" height="16" width="16" /></p>
+<p><img src="images/ignite_cluster.svg" alt="ignite cluster" height="40%" width="40%" align="middle" /></p>
+
 Ignite 通过分配和管理堆外区域来完全控制其内存层。每个 Ignite 服务器节点在引导期间分配内存区域，将区域拆分为页面，并在这些页面中保留带有索引的数据记录。 Java 堆用于保存临时对象，例如查询结果集、指标样本和应用程序代码生成的对象。所有这些对象最终都会被垃圾回收。
 
 如果您选择本机持久性作为磁盘层，那么大部分处理仍将在缓存数据的内存中进行，但完整副本存储在磁盘上。如果内存中缺少任何记录，Ignite 将从磁盘读取它，允许您保留比内存中缓存更大的数据集。这也消除了重新启动时耗时的内存预热的需要。一旦您的集群在重启后重新连接，Ignite 将提供来自磁盘的大部分数据，在后台预热内存层。
@@ -34,7 +34,7 @@ Ignite 在整个集群中提供以下 ACID 保证：
 ### 本地持久化（NATIVE PERSISTENCE）
 尽管 Apache Ignite® 被广泛用作外部数据库之上的缓存层，但它具有本机持久性 - 一个分布式、ACID 和 SQL 兼容的基于磁盘的存储。本机持久性作为磁盘层集成到 Ignite 多层存储中，可以打开该磁盘层，让 Ignite 在磁盘上存储比内存中缓存更多的数据，并支持快速集群重新启动。
 
-![native persistence](./images/native_persistence.svg)
+<p><img src="images/native_persistence.svg" alt="native persistence" height="40%" width="40%" align="middle" /></p>
 
 启用本机持久性后，Ignite 将数据的超集存储在磁盘上，并在内存中尽可能多地缓存。例如，如果您的应用程序需要在 Ignite 集群中存储 200 条记录，并且内存容量只允许缓存 150 条记录，那么所有 200 条记录都将存储在磁盘上，其中 150 条将从内存中提供，而其余 50 条则从磁盘提供应用程序请求它们。
 
@@ -57,7 +57,7 @@ Ignite 本机持久性在整个集群中提供以下 ACID 保证：
 ### 分布式SQL（DISTRIBUTED SQL）
 Apache Ignite® 带有一个符合 ANSI-99 标准、水平可扩展和容错的 SQL 引擎，允许您使用 JDBC、ODBC 驱动程序或适用于 Java、C#、C++ 的本机 SQL API 与常规 SQL 数据库进行交互、Python 和其他编程语言。
 
-![distributed sql](./images/distributed_sql.svg)
+<p><img src="images/distributed_sql.svg" alt="distributed sql" height="40%" width="40%" align="middle" /></p>
 
 Ignite 支持所有 DML 命令，包括 SELECT、UPDATE、INSERT 和 DELETE 查询以及与分布式系统相关的 DDL 命令的子集。
 
@@ -80,7 +80,7 @@ Ignite 可用作外部数据库（如 RDBMS、NoSQL 或 Hadoop）的缓存层。
 ### 分布式Key-Value（DISTRIBUTED KEY-VALUE STORE）
 Apache Ignite® 是一种分布式键值存储，可将数据存储在内存和磁盘上。 Ignite 用作分布式分区哈希映射，在这种部署模式下，每个集群节点都拥有整个数据集的一部分。您可以使用键值请求访问集群或利用 Ignite 中独有的 API，其中包括分布式 ACID 事务、SQL、协同定位计算和机器学习。
 
-![key value](./images/key_value_store%20(1).svg)
+<p><img src="images/key_value_store%20(1).svg" alt="key value" height="40%" width="40%" align="middle" /></p>
 
 #### JCACHE 和扩展的键值 API
 Ignite 键值 API 符合 JCache (JSR 107) 规范并支持：
@@ -105,7 +105,7 @@ Ignite 还扩展了 JCache 规范并支持分布式键值 ACID 事务、扫描�
 ### ACID事务（atomicity, consistency, isolation, durability）
 Apache Ignite® 可以在高度一致的模式下运行，完全支持分布式 ACID 事务。内存层和磁盘层都满足一致性保证。
 
-![ACID](./images/acid_transactions.svg)
+<p><img src="images/acid_transactions.svg" alt="ACID" height="40%" width="40%" align="middle" /></p>
 
 Apache Ignite 中的分布式事务可以跨越多个集群节点、缓存/表和分区。悲观锁定和乐观锁定均可用于应用程序。
 
@@ -123,7 +123,7 @@ Ignite 事务引擎实现了 2PC 协议。每当记录在事务中更新时，Ig
 ### 协同处理（CO-LOCATED PROCESSING）
 Apache Ignite® 支持用于计算密集型和数据密集型计算以及机器学习算法的协同定位处理技术。此技术通过消除网络延迟的影响来提高性能。
 
-![high performance compute](./images/high_performance_compute.svg)
+<p><img src="images/high_performance_compute.svg" alt="high performance compute" height="40%" width="40%" align="middle" /></p>
 
 在传统的基于磁盘的系统中，例如关系数据库或 NoSQL 数据库，客户端应用程序通常从服务器获取数据，使用记录进行本地计算，并在业务任务完成后立即丢弃数据。如果大量数据通过网络传输，这种方法不能很好地扩展。
 
@@ -219,7 +219,7 @@ ignite.compute().affinityRun("City", newYorkId, new IgniteRunnable() {
 ### 机器学习（MACHINE LEARNING）
 Apache Ignite® 机器学习 (ML) 是一组简单、可扩展且高效的工具，可用于构建预测性机器学习模型，而无需进行昂贵的数据传输。将机器和深度学习 (DL) 添加到 Apache Ignite 的基本原理非常简单。今天的数据科学家必须处理阻止 ML 被主流采用的两个主要因素。
 
-![machine learning](./images/machine_learning.svg)
+<p><img src="images/machine_learning.svg" alt="machine learning" height="40%" width="40%" align="middle" /></p>
 
 #### 问题 1：持续数据移动 (ETL)
 首先，模型在​​不同的系统中进行训练和部署（在训练结束后）。数据科学家必须等待 ETL 或其他一些数据传输过程，才能将数据移动到 Apache Mahout 或 Apache Spark 等系统中以进行培训。然后他们必须等待此过程完成并在生产环境中重新部署模型。整个过程可能需要数小时才能将数 TB 的数据从一个系统移动到另一个系统。此外，训练部分通常发生在旧数据集上。
@@ -238,7 +238,7 @@ Ignite Machine Learning 可以容忍节点故障。这意味着在学习过程�
 #### 服务网格（service grid）
 Apache Ignite® 服务网格允许在集群上部署任意用户定义的服务。 您可以实现和部署任何服务，例如自定义计数器、ID 生成器、分层映射等。
 
-![service grid](./images/ignite_service_grid_v1.png)
+<p><img src="images/ignite_service_grid_v1.png" alt="service grid" height="40%" width="40%" align="middle" /></p>
 
 服务网格的主要用例是能够在集群中部署各种类型的*单例服务*。 但是，如果您需要一个服务的多个实例，Ignite 还将确保所有服务实例的正确部署和容错。
 
@@ -290,7 +290,7 @@ svcs.deployClusterSingleton("myClusterSingleton", new MyIgniteService());
 #### 流式传输
 Apache Ignite® 数据加载和流式传输功能允许以可扩展和容错的方式将大量有限且永无止境的数据量摄取到集群中。数据注入 Ignite 的速度非常快，在中等规模的集群上很容易超过每秒数百万个事件。
 
-![stream query](./images/ignite-stream-query.png)
+<p><img src="images/ignite-stream-query.png" alt="stream query" height="40%" width="40%" align="middle" /></p>
 
 Apache Ignite 与主要的流技术和框架（如 Kafka、Camel、Storm 或 JMS）集成，为基于 Ignite 的架构带来更高级的流功能。
 
