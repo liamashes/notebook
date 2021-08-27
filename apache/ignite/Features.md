@@ -34,7 +34,7 @@ Ignite 在整个集群中提供以下 ACID 保证：
 ### 本地持久化（NATIVE PERSISTENCE）
 尽管 Apache Ignite® 被广泛用作外部数据库之上的缓存层，但它具有本机持久性 - 一个分布式、ACID 和 SQL 兼容的基于磁盘的存储。本机持久性作为磁盘层集成到 Ignite 多层存储中，可以打开该磁盘层，让 Ignite 在磁盘上存储比内存中缓存更多的数据，并支持快速集群重新启动。
 
-<p><img src="images/native_persistence.svg" alt="native persistence" height="40%" width="40%"/></p>
+<p align="center"><img src="images/native_persistence.svg" alt="native persistence" height="40%" width="40%"/></p>
 
 启用本机持久性后，Ignite 将数据的超集存储在磁盘上，并在内存中尽可能多地缓存。例如，如果您的应用程序需要在 Ignite 集群中存储 200 条记录，并且内存容量只允许缓存 150 条记录，那么所有 200 条记录都将存储在磁盘上，其中 150 条将从内存中提供，而其余 50 条则从磁盘提供应用程序请求它们。
 
@@ -57,7 +57,7 @@ Ignite 本机持久性在整个集群中提供以下 ACID 保证：
 ### 分布式SQL（DISTRIBUTED SQL）
 Apache Ignite® 带有一个符合 ANSI-99 标准、水平可扩展和容错的 SQL 引擎，允许您使用 JDBC、ODBC 驱动程序或适用于 Java、C#、C++ 的本机 SQL API 与常规 SQL 数据库进行交互、Python 和其他编程语言。
 
-<p><img src="images/distributed_sql.svg" alt="distributed sql" height="40%" width="40%" align="middle" /></p>
+<p align="center"><img src="images/distributed_sql.svg" alt="distributed sql" height="40%" width="40%" /></p>
 
 Ignite 支持所有 DML 命令，包括 SELECT、UPDATE、INSERT 和 DELETE 查询以及与分布式系统相关的 DDL 命令的子集。
 
@@ -80,7 +80,7 @@ Ignite 可用作外部数据库（如 RDBMS、NoSQL 或 Hadoop）的缓存层。
 ### 分布式Key-Value（DISTRIBUTED KEY-VALUE STORE）
 Apache Ignite® 是一种分布式键值存储，可将数据存储在内存和磁盘上。 Ignite 用作分布式分区哈希映射，在这种部署模式下，每个集群节点都拥有整个数据集的一部分。您可以使用键值请求访问集群或利用 Ignite 中独有的 API，其中包括分布式 ACID 事务、SQL、协同定位计算和机器学习。
 
-<p><img src="images/key_value_store%20(1).svg" alt="key value" height="40%" width="40%" align="middle" /></p>
+<p align="center"><img src="images/key_value_store%20(1).svg" alt="key value" height="40%" width="40%" /></p>
 
 #### JCACHE 和扩展的键值 API
 Ignite 键值 API 符合 JCache (JSR 107) 规范并支持：
@@ -105,7 +105,7 @@ Ignite 还扩展了 JCache 规范并支持分布式键值 ACID 事务、扫描�
 ### ACID事务（atomicity, consistency, isolation, durability）
 Apache Ignite® 可以在高度一致的模式下运行，完全支持分布式 ACID 事务。内存层和磁盘层都满足一致性保证。
 
-<p><img src="images/acid_transactions.svg" alt="ACID" height="40%" width="40%" align="middle" /></p>
+<p align="center"><img src="images/acid_transactions.svg" alt="ACID" height="40%" width="40%" /></p>
 
 Apache Ignite 中的分布式事务可以跨越多个集群节点、缓存/表和分区。悲观锁定和乐观锁定均可用于应用程序。
 
@@ -123,7 +123,7 @@ Ignite 事务引擎实现了 2PC 协议。每当记录在事务中更新时，Ig
 ### 协同处理（CO-LOCATED PROCESSING）
 Apache Ignite® 支持用于计算密集型和数据密集型计算以及机器学习算法的协同定位处理技术。此技术通过消除网络延迟的影响来提高性能。
 
-<p><img src="images/high_performance_compute.svg" alt="high performance compute" height="40%" width="40%" align="middle" /></p>
+<p align="center"><img src="images/high_performance_compute.svg" alt="high performance compute" height="40%" width="40%" /></p>
 
 在传统的基于磁盘的系统中，例如关系数据库或 NoSQL 数据库，客户端应用程序通常从服务器获取数据，使用记录进行本地计算，并在业务任务完成后立即丢弃数据。如果大量数据通过网络传输，这种方法不能很好地扩展。
 
@@ -219,7 +219,7 @@ ignite.compute().affinityRun("City", newYorkId, new IgniteRunnable() {
 ### 机器学习（MACHINE LEARNING）
 Apache Ignite® 机器学习 (ML) 是一组简单、可扩展且高效的工具，可用于构建预测性机器学习模型，而无需进行昂贵的数据传输。将机器和深度学习 (DL) 添加到 Apache Ignite 的基本原理非常简单。今天的数据科学家必须处理阻止 ML 被主流采用的两个主要因素。
 
-<p><img src="images/machine_learning.svg" alt="machine learning" height="40%" width="40%" align="middle" /></p>
+<p align="center"><img src="images/machine_learning.svg" alt="machine learning" height="40%" width="40%" /></p>
 
 #### 问题 1：持续数据移动 (ETL)
 首先，模型在​​不同的系统中进行训练和部署（在训练结束后）。数据科学家必须等待 ETL 或其他一些数据传输过程，才能将数据移动到 Apache Mahout 或 Apache Spark 等系统中以进行培训。然后他们必须等待此过程完成并在生产环境中重新部署模型。整个过程可能需要数小时才能将数 TB 的数据从一个系统移动到另一个系统。此外，训练部分通常发生在旧数据集上。
@@ -238,7 +238,7 @@ Ignite Machine Learning 可以容忍节点故障。这意味着在学习过程�
 #### 服务网格（service grid）
 Apache Ignite® 服务网格允许在集群上部署任意用户定义的服务。 您可以实现和部署任何服务，例如自定义计数器、ID 生成器、分层映射等。
 
-<p><img src="images/ignite_service_grid_v1.png" alt="service grid" height="40%" width="40%" align="middle" /></p>
+<p align="center"><img src="images/ignite_service_grid_v1.png" alt="service grid" height="40%" width="40%" /></p>
 
 服务网格的主要用例是能够在集群中部署各种类型的*单例服务*。 但是，如果您需要一个服务的多个实例，Ignite 还将确保所有服务实例的正确部署和容错。
 
@@ -290,7 +290,7 @@ svcs.deployClusterSingleton("myClusterSingleton", new MyIgniteService());
 #### 流式传输
 Apache Ignite® 数据加载和流式传输功能允许以可扩展和容错的方式将大量有限且永无止境的数据量摄取到集群中。数据注入 Ignite 的速度非常快，在中等规模的集群上很容易超过每秒数百万个事件。
 
-<p><img src="images/ignite-stream-query.png" alt="stream query" height="40%" width="40%" align="middle" /></p>
+<p align="center"><img src="images/ignite-stream-query.png" alt="stream query" height="40%" width="40%" /></p>
 
 Apache Ignite 与主要的流技术和框架（如 Kafka、Camel、Storm 或 JMS）集成，为基于 Ignite 的架构带来更高级的流功能。
 
@@ -353,14 +353,14 @@ try (IgniteDataStreamer<String, Long> stmr = ignite.dataStreamer(stmCache.getNam
 > Collocated Processing | 对于需要执行一些自定义逻辑而不仅仅是添加新数据的情况，您可以利用 StreamReceiver API。流接收器允许您直接在将被缓存的节点上以并置方式对流数据做出反应。 在将数据放入缓存之前，您可以更改数据或向其添加任何自定义预处理逻辑。[相关文档](https://ignite.apache.org/docs/latest/data-streaming)
 > Continuous Queries | 当您想要执行查询然后继续收到有关属于查询过滤器的数据更改的通知时，连续查询非常有用。[相关文档](https://ignite.apache.org/docs/latest/key-value-api/continuous-queries)
 > JMS Data Streamer | Apache Ignite JMS 1.1 模块提供了一个流送器，用于将 JMS 队列和主题消息消耗到 Apache Ignite 缓存中。[相关文档](https://ignite.apache.org/docs/latest/extensions-and-integrations/streaming/jms-streamer)
-> Apache Flume Sink <p><img src="images/apache_flume.png" alt="flume" height="40%" width="40%" align="middle" /></p> | IgniteSink 是一个 Flume 接收器，它从关联的 Flume 通道中提取事件并将它们注入到 Ignite 缓存中。 支持 Flume 1.7.0。[相关文档](https://ignite.apache.org/docs/latest/extensions-and-integrations/streaming/flume-sink)
+> Apache Flume Sink <p align="center"><img src="images/apache_flume.png" alt="flume" height="40%" width="40%" /></p> | IgniteSink 是一个 Flume 接收器，它从关联的 Flume 通道中提取事件并将它们注入到 Ignite 缓存中。 支持 Flume 1.7.0。[相关文档](https://ignite.apache.org/docs/latest/extensions-and-integrations/streaming/flume-sink)
 > MQTT Streamer | Apache Ignite MQTT 模块提供了一个流传输器，用于将 MQTT 主题消息消费到 Apache Ignite 缓存中。[相关文档](https://ignite.apache.org/docs/latest/extensions-and-integrations/streaming/mqtt-streamer)
 > Twitter Streamer | Ignite Twitter Streamer 使用来自 Twitter Streaming API 的消息并将它们插入到 Ignite 缓存中。[相关文档](https://ignite.apache.org/docs/latest/extensions-and-integrations/streaming/twitter-streamer)
-> Apache Kafka Streamer <p><img src="images/apache_kafka.png" alt="kafka" height="40%" width="40%" align="middle" /></p> | Apache Ignite Kafka Streamer 模块提供从 Kafka 到 Ignite 缓存的流式传输。 有两种方法可以实现：在您的 Maven 项目中导入 Kafka Streamer 模块并实例化 KafkaStreamer 以进行数据流；使用 Kafka Connect 功能。[相关文档](https://ignite.apache.org/docs/latest/extensions-and-integrations/streaming/kafka-streamer)
-> Apache Camel streamer ![camel](./images/apache_camel.png) | Apache Ignite Camel 提供了一个 streamer 来使用来自 Camel 端点的缓存元组，例如 HTTP、TCP、文件、FTP、AMQP、SNMP、数据库等。有关可用组件的更多信息，请参阅 [Camel 组件](https://camel.apache.org/components/latest/)。[相关文档](https://ignite.apache.org/docs/latest/extensions-and-integrations/streaming/camel-streamer)
-> Apache Storm Streamer ![storm](./images/apache_storm.png) | Ignite Storm Streamer 使用来自 Apache Storm 消费者端点的消息并将它们馈送到 Ignite 缓存中。[相关文档](https://ignite.apache.org/docs/latest/extensions-and-integrations/streaming/storm-streamer)
-> Apache Flink Streamer ![flink](./images/apache_flink.png) | Ignite Flink Streamer 使用来自 Apache Flink 消费者端点的消息并将它们提供给 Ignite 缓存。[相关文档](https://ignite.apache.org/docs/latest/extensions-and-integrations/streaming/flink-streamer)
-> Apache RocketMQ Streamer ![rocketMq](./images/rocket_mq.png) | Ignite RocketMQ Streamer 使用来自 Apache RocketMQ 消费者端点的消息，并将它们提供给 Ignite 缓存。[相关文档](https://ignite.apache.org/docs/latest/extensions-and-integrations/streaming/rocketmq-streamer)
+> Apache Kafka Streamer <p align="center"><img src="images/apache_kafka.png" alt="kafka" height="40%" width="40%" /></p> | Apache Ignite Kafka Streamer 模块提供从 Kafka 到 Ignite 缓存的流式传输。 有两种方法可以实现：在您的 Maven 项目中导入 Kafka Streamer 模块并实例化 KafkaStreamer 以进行数据流；使用 Kafka Connect 功能。[相关文档](https://ignite.apache.org/docs/latest/extensions-and-integrations/streaming/kafka-streamer)
+> Apache Camel streamer <p align="center"><img src="images/apache_camel.png" alt="camel" height="40%" width="40%" /></p> | Apache Ignite Camel 提供了一个 streamer 来使用来自 Camel 端点的缓存元组，例如 HTTP、TCP、文件、FTP、AMQP、SNMP、数据库等。有关可用组件的更多信息，请参阅 [Camel 组件](https://camel.apache.org/components/latest/)。[相关文档](https://ignite.apache.org/docs/latest/extensions-and-integrations/streaming/camel-streamer)
+> Apache Storm Streamer <p align="center"><img src="images/apache_storm.png" alt="storm" height="40%" width="40%" /></p> | Ignite Storm Streamer 使用来自 Apache Storm 消费者端点的消息并将它们馈送到 Ignite 缓存中。[相关文档](https://ignite.apache.org/docs/latest/extensions-and-integrations/streaming/storm-streamer)
+> Apache Flink Streamer <p align="center"><img src="images/apache_flink.png" alt="flink" height="40%" width="40%" /></p> | Ignite Flink Streamer 使用来自 Apache Flink 消费者端点的消息并将它们提供给 Ignite 缓存。[相关文档](https://ignite.apache.org/docs/latest/extensions-and-integrations/streaming/flink-streamer)
+> Apache RocketMQ Streamer <p align="center"><img src="images/rocket_mq.png" alt="rocketMq" height="40%" width="40%" /></p> | Ignite RocketMQ Streamer 使用来自 Apache RocketMQ 消费者端点的消息，并将它们提供给 Ignite 缓存。[相关文档](https://ignite.apache.org/docs/latest/extensions-and-integrations/streaming/rocketmq-streamer)
 > ZeroMQ Streamer | Apache Ignite ZeroMQ Streamer 模块提供从 ZeroMQ 到 Ignite 缓存的流。[相关文档](https://ignite.apache.org/docs/latest/extensions-and-integrations/streaming/zeromq-streamer)
 > Pub/Sub Streamer | Pub/Sub 模块是一个流连接器，用于将 Pub/Sub 数据注入 Ignite 缓存。
 
