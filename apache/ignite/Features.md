@@ -34,7 +34,7 @@ Ignite 在整个集群中提供以下 ACID 保证：
 ### 本地持久化（NATIVE PERSISTENCE）
 尽管 Apache Ignite® 被广泛用作外部数据库之上的缓存层，但它具有本机持久性 - 一个分布式、ACID 和 SQL 兼容的基于磁盘的存储。本机持久性作为磁盘层集成到 Ignite 多层存储中，可以打开该磁盘层，让 Ignite 在磁盘上存储比内存中缓存更多的数据，并支持快速集群重新启动。
 
-<p><img src="images/native_persistence.svg" alt="native persistence" height="40%" width="40%" align="middle" align-items="center"/></p>
+<p text-align="center"><img src="images/native_persistence.svg" alt="native persistence" height="40%" width="40%"/></p>
 
 启用本机持久性后，Ignite 将数据的超集存储在磁盘上，并在内存中尽可能多地缓存。例如，如果您的应用程序需要在 Ignite 集群中存储 200 条记录，并且内存容量只允许缓存 150 条记录，那么所有 200 条记录都将存储在磁盘上，其中 150 条将从内存中提供，而其余 50 条则从磁盘提供应用程序请求它们。
 
