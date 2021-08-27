@@ -34,7 +34,7 @@ Ignite 在整个集群中提供以下 ACID 保证：
 ### 本地持久化（NATIVE PERSISTENCE）
 尽管 Apache Ignite® 被广泛用作外部数据库之上的缓存层，但它具有本机持久性 - 一个分布式、ACID 和 SQL 兼容的基于磁盘的存储。本机持久性作为磁盘层集成到 Ignite 多层存储中，可以打开该磁盘层，让 Ignite 在磁盘上存储比内存中缓存更多的数据，并支持快速集群重新启动。
 
-<p><img src="images/native_persistence.svg" alt="native persistence" height="40%" width="40%" align="middle" /></p>
+<p><img src="images/native_persistence.svg" alt="native persistence" height="40%" width="40%" align="middle" align-items="center"/></p>
 
 启用本机持久性后，Ignite 将数据的超集存储在磁盘上，并在内存中尽可能多地缓存。例如，如果您的应用程序需要在 Ignite 集群中存储 200 条记录，并且内存容量只允许缓存 150 条记录，那么所有 200 条记录都将存储在磁盘上，其中 150 条将从内存中提供，而其余 50 条则从磁盘提供应用程序请求它们。
 
@@ -353,10 +353,10 @@ try (IgniteDataStreamer<String, Long> stmr = ignite.dataStreamer(stmCache.getNam
 > Collocated Processing | 对于需要执行一些自定义逻辑而不仅仅是添加新数据的情况，您可以利用 StreamReceiver API。流接收器允许您直接在将被缓存的节点上以并置方式对流数据做出反应。 在将数据放入缓存之前，您可以更改数据或向其添加任何自定义预处理逻辑。[相关文档](https://ignite.apache.org/docs/latest/data-streaming)
 > Continuous Queries | 当您想要执行查询然后继续收到有关属于查询过滤器的数据更改的通知时，连续查询非常有用。[相关文档](https://ignite.apache.org/docs/latest/key-value-api/continuous-queries)
 > JMS Data Streamer | Apache Ignite JMS 1.1 模块提供了一个流送器，用于将 JMS 队列和主题消息消耗到 Apache Ignite 缓存中。[相关文档](https://ignite.apache.org/docs/latest/extensions-and-integrations/streaming/jms-streamer)
-> Apache Flume Sink ![flume](./images/apache_flume.png) | IgniteSink 是一个 Flume 接收器，它从关联的 Flume 通道中提取事件并将它们注入到 Ignite 缓存中。 支持 Flume 1.7.0。[相关文档](https://ignite.apache.org/docs/latest/extensions-and-integrations/streaming/flume-sink)
+> Apache Flume Sink <p><img src="images/apache_flume.png" alt="flume" height="40%" width="40%" align="middle" /></p> | IgniteSink 是一个 Flume 接收器，它从关联的 Flume 通道中提取事件并将它们注入到 Ignite 缓存中。 支持 Flume 1.7.0。[相关文档](https://ignite.apache.org/docs/latest/extensions-and-integrations/streaming/flume-sink)
 > MQTT Streamer | Apache Ignite MQTT 模块提供了一个流传输器，用于将 MQTT 主题消息消费到 Apache Ignite 缓存中。[相关文档](https://ignite.apache.org/docs/latest/extensions-and-integrations/streaming/mqtt-streamer)
 > Twitter Streamer | Ignite Twitter Streamer 使用来自 Twitter Streaming API 的消息并将它们插入到 Ignite 缓存中。[相关文档](https://ignite.apache.org/docs/latest/extensions-and-integrations/streaming/twitter-streamer)
-> Apache Kafka Streamer ![kafka](./images/apache_kafka.png) | Apache Ignite Kafka Streamer 模块提供从 Kafka 到 Ignite 缓存的流式传输。 有两种方法可以实现：在您的 Maven 项目中导入 Kafka Streamer 模块并实例化 KafkaStreamer 以进行数据流；使用 Kafka Connect 功能。[相关文档](https://ignite.apache.org/docs/latest/extensions-and-integrations/streaming/kafka-streamer)
+> Apache Kafka Streamer <p><img src="images/apache_kafka.png" alt="kafka" height="40%" width="40%" align="middle" /></p> | Apache Ignite Kafka Streamer 模块提供从 Kafka 到 Ignite 缓存的流式传输。 有两种方法可以实现：在您的 Maven 项目中导入 Kafka Streamer 模块并实例化 KafkaStreamer 以进行数据流；使用 Kafka Connect 功能。[相关文档](https://ignite.apache.org/docs/latest/extensions-and-integrations/streaming/kafka-streamer)
 > Apache Camel streamer ![camel](./images/apache_camel.png) | Apache Ignite Camel 提供了一个 streamer 来使用来自 Camel 端点的缓存元组，例如 HTTP、TCP、文件、FTP、AMQP、SNMP、数据库等。有关可用组件的更多信息，请参阅 [Camel 组件](https://camel.apache.org/components/latest/)。[相关文档](https://ignite.apache.org/docs/latest/extensions-and-integrations/streaming/camel-streamer)
 > Apache Storm Streamer ![storm](./images/apache_storm.png) | Ignite Storm Streamer 使用来自 Apache Storm 消费者端点的消息并将它们馈送到 Ignite 缓存中。[相关文档](https://ignite.apache.org/docs/latest/extensions-and-integrations/streaming/storm-streamer)
 > Apache Flink Streamer ![flink](./images/apache_flink.png) | Ignite Flink Streamer 使用来自 Apache Flink 消费者端点的消息并将它们提供给 Ignite 缓存。[相关文档](https://ignite.apache.org/docs/latest/extensions-and-integrations/streaming/flink-streamer)
@@ -606,6 +606,7 @@ Apache Ignite 正式支持以下命令行工具来管理和监控集群：
 
 #### ![datadog](./images/datadog-logo.png) DATADOG INTEGRATION FOR APACHE IGNITE
 ![datadog dashboard](./images/apache-ignite-datadog-dashboard.jpeg)
+
 [Datadog](https://www.datadoghq.com/blog/monitor-apache-ignite-with-datadog/) 是一个通用的监控服务，它与 Apache Ignite 本地集成以提供以下功能：
 
 > * 通过开箱即用的仪表板收集和可视化 Ignite 节点的指标。
@@ -615,6 +616,7 @@ Apache Ignite 正式支持以下命令行工具来管理和监控集群：
 
 #### ![zabbix](./images/zabbix-iso.png) Zabbix
 ![zabbix screenshot](./images/zabbix-screenshot--sm.jpeg)
+
 [Zabbix](https://www.zabbix.com/integrations/ignite#tab:official1) 是一种开源监控软件工具，适用于各种 IT 组件，包括网络、服务器、虚拟机和云服务。 Zabbix 提供监控指标，其中包括网络利用率、CPU 负载和磁盘空间消耗。
 
 > * Apache Ignite 计算平台的官方 JMX 模板。该模板基于由 GridGain Systems 的高级工程师和 Apache Ignite Contributor 的 Igor Akkuratov 开发的原始模板。
