@@ -4,7 +4,7 @@
 ### 多层存储（MULTI-TIER STORAGE）
 Apache Ignite® 旨在将内存、磁盘和英特尔傲腾用作活动存储层。内存层允许使用在内存模式下运行的 DRAM 和英特尔® 傲腾™ 来满足数据存储和处理需求。磁盘层是可选的，支持两个选项——您可以将数据保存在外部数据库中或将其保存在 Ignite 本机持久性中。在 AppDirect 模式下运行的 SSD、Flash、HDD 或 Intel Optane 可用作存储设备。
 
-<p><img src="images/ignite_cluster.svg" alt="ignite cluster" height="40%" width="40%" align="middle" /></p>
+<p><img src="images/ignite_cluster.svg" alt="ignite cluster" height="40%" width="40%" text-align="center" /></p>
 
 Ignite 通过分配和管理堆外区域来完全控制其内存层。每个 Ignite 服务器节点在引导期间分配内存区域，将区域拆分为页面，并在这些页面中保留带有索引的数据记录。 Java 堆用于保存临时对象，例如查询结果集、指标样本和应用程序代码生成的对象。所有这些对象最终都会被垃圾回收。
 
