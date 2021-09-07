@@ -18,6 +18,14 @@ Spring Security 访问控制列表是一个支持域对象安全的 Spring 组�
 > * jdbc
 > * model
 
+> 包 | 描述
+> --- | ---
+> acls	| Spring Security ACL 包，它为域对象实现基于实例的安全性。
+> acls.afterinvocation	| 用于集合和数组过滤的调用后提供程序。
+> acls.domain | 访问控制列表 (ACL) 接口的基本实现。
+> acls.jdbc | 基于JDBC的ACL信息持久化
+> acls.model | 用于管理域对象实例的访问控制列表 (ACL) 的接口和共享类。
+
 ## 1-2、基础部分
 Spring Security ACL 包，它为域对象实现基于实例的安全性。
 
