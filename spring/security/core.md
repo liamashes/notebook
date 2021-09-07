@@ -45,6 +45,46 @@
 > task |
 > util |在整个 Spring Security 框架中使用的通用实用程序类。
 ## 2-2、访问（access）
+    核心访问控制相关代码，包括安全元数据相关类、拦截代码、访问控制注释、EL 支持和中央 AccessDecisionManager 接口的基于投票者的实现。
+
+#### 2-2-0-1、AccessDecisionManager
+    做出最终的访问控制（授权）决定。
+
+##### decide(Authentication authentication, Object object, Collection<ConfigAttribute> configAttributes) void
+    为传递的参数解析访问控制决策。
+
+> * 参数：
+>   * 身份验证 - 调用方法的调用者（非空）
+>   * object - 被调用的安全对象
+>   * configAttributes - 与被调用的安全对象关联的配置属性
+> * 抛出：
+>   * AccessDeniedException - 如果访问被拒绝，因为身份验证没有所需的权限或 ACL 特权
+>   * InsufficientAuthenticationException - 如果访问被拒绝，因为身份验证没有提供足够的信任级别
+
+##### supports(java.lang.Class<?> clazz) boolean
+    指示此 AccessDecisionManager 是否能够处理通过传递的 ConfigAttribute 呈现的授权请求。
+
+    这允许 AbstractSecurityInterceptor 检查配置的 AccessDecisionManager 和/或 RunAsManager 和/或 AfterInvocationManager 可以使用
+    的每个配置属性。
+
+> * 参数：
+>   * attribute - 针对 AbstractSecurityInterceptor 配置的配置属性
+> * 返回：
+>   * 如果此 AccessDecisionManager 可以支持传递的配置属性，则为 true
+##### supports(ConfigAttribute attribute) boolean
+    指示 AccessDecisionManager 实现是否能够为指示的安全对象类型提供访问控制决策。
+
+> * 参数：
+>   * clazz - 被查询的类
+> * 返回：
+>   * 如果实现可以处理指定的类，则为 true
+
+#### 2-2-0-2、AccessDecisionVoter
+#### 2-2-0-3、AfterInvocationProvider
+#### 2-2-0-4、ConfigAttribute
+#### 2-2-0-5、PermissionCacheOptimizer
+#### 2-2-0-6、PermissionEvaluator
+#### 2-2-0-7、SecurityMetadataSource
 ### 2-2-1、access
 ### 2-2-2、access.annotation
 ### 2-2-3、access.event
