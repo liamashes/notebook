@@ -47,11 +47,14 @@
 ## 2-2、访问（access）
     核心访问控制相关代码，包括安全元数据相关类、拦截代码、访问控制注释、EL 支持和中央 AccessDecisionManager 接口的基于投票者的实现。
 
+![access](./images/core/security-access.png)
+
 #### 2-2-0-1、AccessDecisionManager
     做出最终的访问控制（授权）决定。
 
 ##### decide(Authentication authentication, Object object, Collection<ConfigAttribute> configAttributes) void
     为传递的参数解析访问控制决策。
+    通过抛出异常的方式判断该方法是否验证通过
 
 > * 参数：
 >   * 身份验证 - 调用方法的调用者（非空）
@@ -80,11 +83,150 @@
 >   * 如果实现可以处理指定的类，则为 true
 
 #### 2-2-0-2、AccessDecisionVoter
+    表示一个类负责对授权决定进行投票。
+    投票的协调（即轮询 AccessDecisionVoters，统计他们的响应，并做出最终的授权决定）由 AccessDecisionManager 执行。
+    
+> * 域：
+>   * ACCESS_ABSTAIN
+>   * ACCESS_DENIED
+>   * ACCESS_GRANTED
+
+##### supports(Class<?> clazz) boolean
+    指示此 AccessDecisionVoter 是否能够对传递的 ConfigAttribute 进行投票。
+    这允许 AbstractSecurityInterceptor 检查配置的 AccessDecisionManager 和/或 RunAsManager 和/或 AfterInvocationManager 可以
+    使用的每个配置属性。
+
+> * 参数：
+>   * attribute - 针对 AbstractSecurityInterceptor 配置的配置属性
+> * 返回：
+>   * 如果此 AccessDecisionVoter 可以支持传递的配置属性，则为 true
+
+##### supports(ConfigAttribute attribute) boolean
+    指示 AccessDecisionVoter 实现是否能够为指示的安全对象类型提供访问控制投票。
+
+> * 参数：
+>   * clazz - 被查询的类
+> * 返回：
+>   * 如果实现可以处理指定的类，则为 true
+##### vote(Authentication authentication, S object, Collection<ConfigAttribute> attributes) int
+    指示是否授予访问权限。
+    决定必须是肯定 (ACCESS_GRANTED)、否定 (ACCESS_DENIED) 或 AccessDecisionVoter 可以弃权 (ACCESS_ABSTAIN) 投票。在任何情况下，
+    实现类都不应返回任何其他值。如果需要对结果进行加权，则应改为在自定义 AccessDecisionManager 中处理。
+
+    除非由于传递的方法调用或配置属性参数，AccessDecisionVoter 专门用于对访问控制决策进行投票，否则它必须返回 ACCESS_ABSTAIN。这可以防
+    止协调 AccessDecisionManager 计算那些对访问控制决策没有合法利益的 AccessDecisionVoter 的选票。
+
+    虽然安全对象（例如 MethodInvocation）作为参数传递以最大限度地提高访问控制决策的灵活性，但实现类不应修改它或导致所表示的调用发生（例
+    如，通过调用 MethodInvocation.proceed()） .
+
+> * 参数：
+>   * 身份验证 - 进行调用的调用者
+>   * object - 被调用的安全对象
+>   * 属性 - 与受保护对象关联的配置属性
+> * 返回：
+>   * ACCESS_GRANTED、ACCESS_ABSTAIN 或 ACCESS_DENIED
 #### 2-2-0-3、AfterInvocationProvider
+    表示一个类负责参与 AfterInvocationProviderManager 决策。
+    
+##### decide(Authentication authentication, Object object, Collection<ConfigAttribute> attributes, Object returnedObject)  Object
+
+> * 抛出:
+>   * AccessDeniedException
+
+##### supports(ConfigAttribute attribute) boolean
+    指示此 AfterInvocationProvider 是否能够参与涉及传递的 ConfigAttribute 的决策。
+    这允许 AbstractSecurityInterceptor 检查配置的 AccessDecisionManager 和/或 RunAsManager 和/或 AccessDecisionManager 可以
+    使用的每个配置属性。
+
+> * 参数：
+>   * attribute - 针对 AbstractSecurityInterceptor 配置的配置属性
+> * 返回：
+>   * 如果此 AfterInvocationProvider 可以支持传递的配置属性，则为 true
+
+##### supports(java.lang.Class<?> clazz) boolean
+    指示 AfterInvocationProvider 是否能够为指示的安全对象类型提供“调用后”处理。
+
+> * 参数：
+>   * clazz - 被查询的安全对象的类
+> * 返回：
+>   * 如果实现可以处理指定的类，则为 true
+
 #### 2-2-0-4、ConfigAttribute
+    存储与安全系统相关的配置属性。
+    设置 AbstractSecurityInterceptor 时，会为安全对象模式定义配置属性列表。 这些配置属性对于 RunAsManager、AccessDecisionManager 
+    或 AccessDecisionManager 委托具有特殊意义。
+    在运行时与同一安全对象目标的其他 ConfigAttributes 一起存储。
+
+##### getAttribute() String
+    如果 ConfigAttribute 可以表示为字符串，并且该字符串的精度足以被 RunAsManager、AccessDecisionManager 或 AccessDecisionManager 
+    委托作为配置参数所依赖，则此方法应返回这样的字符串。
+    如果 ConfigAttribute 不能以足够的精度表示为字符串，则应返回 null。 返回 null 将需要任何依赖类专门支持 ConfigAttribute 实现，因此
+    除非实际需要，否则应避免返回 null。
+
+> * 返回：
+> * 配置属性的表示（如果配置属性不能表示为具有足够精度的字符串，则为 null）。
+
 #### 2-2-0-5、PermissionCacheOptimizer
+    允许在对表达式使用前置或后置过滤时预先缓存权限
+    
+##### cachePermissionsFor(Authentication a, Collection<?> objects) void
+    优化权限缓存以对提供的对象集合进行预期操作。 通常这需要批量加载集合中对象的权限。
+
+> * 参数：
+>   * a - 应为其获取权限的用户。
+>   * 对象 - 应为其检索权限的域对象的（非空）集合。
+
 #### 2-2-0-6、PermissionEvaluator
+    表达式评估中使用的策略，用于确定用户是否具有给定域对象的一个或多个权限。
+    
+##### hasPermission(Authentication authentication, Object targetDomainObject, Object permission)  boolean
+> * 参数：
+>   * 身份验证 - 代表有问题的用户。 不应为空。
+>   * targetDomainObject - 应检查其权限的域对象。 可能为 null，在这种情况下，实现应返回 false，因为可以在表达式中明确检查 null 条件。
+>   * 权限 - 表达系统提供的权限对象的表示。 不为空。
+> * 返回：
+>   * 如果授予权限，则为 true，否则为 false
+
+##### hasPermission(Authentication authentication, Serializable targetId, String targetType, Object permission) boolean
+    评估权限的替代方法，其中只有目标对象的标识符可用，而不是目标实例本身。
+
+> * 参数：
+>   * 身份验证 - 代表有问题的用户。 不应为空。
+>   * targetId - 对象实例的标识符（通常是 Long）
+>   * targetType - 表示目标类型的字符串（通常是 Java 类名）。 不为空。
+>   * 权限 - 表达系统提供的权限对象的表示。 不为空。
+> * 返回：
+>   * 如果授予权限，则为 true，否则为 false
+
 #### 2-2-0-7、SecurityMetadataSource
+    由存储并可以识别适用于给定安全对象调用的 ConfigAttributes 的类实现。
+
+##### getAllConfigAttributes() Collection<ConfigAttribute>
+    如果可用，则返回实现类定义的所有 ConfigAttributes。
+    AbstractSecurityInterceptor 使用它来执行针对它配置的每个 ConfigAttribute 的启动时间验证。
+
+> * 返回：
+>   * 如果不支持，则为 ConfigAttributes 或 null
+
+##### getAttributes(Object object) Collection<ConfigAttribute>
+    访问适用于给定安全对象的 ConfigAttributes。
+
+> * 参数：
+>   * object - 被保护的对象
+> * 返回：
+>   * 适用于传入的安全对象的属性。 如果没有适用的属性，则应返回一个空集合。
+> * 抛出：
+>   * java.lang.IllegalArgumentException - 如果传递的对象不是 SecurityMetadataSource 实现支持的类型
+
+##### supports(java.lang.Class<?> clazz) boolean
+    指示 SecurityMetadataSource 实现是否能够为指示的安全对象类型提供 ConfigAttributes。
+
+> * 参数：
+>   * clazz - 被查询的类
+> * 返回：
+>   * 如果实现可以处理指定的类，则为 true
+
+
 ### 2-2-1、access
 ### 2-2-2、access.annotation
 ### 2-2-3、access.event
