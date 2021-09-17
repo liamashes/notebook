@@ -3,47 +3,47 @@
 ![core](./images/core/core.png)
 > 包 | 描述
 > --- | ---
-> access |核心访问控制相关代码，包括安全元数据相关类、拦截代码、访问控制注释、EL 支持和中央 AccessDecisionManager 接口的基于投票者的实现。
-> access.annotation |支持 JSR-250 和 Spring Security @Secured 注释。
-> access.event |授权事件和侦听器类。
-> access.expression |表达式处理代码支持在 @PreAuthorize、@PreFilter、@PostAuthorize 和 @PostFilter 注释中使用基于 Spring-EL 的表达式。
-> access.expression.method |基于表达式的方法安全的实现。
-> access.hierarchicalroles |角色层次结构实现。
-> access.intercept |抽象级安全拦截类，负责为安全对象强制执行配置的安全约束。
-> access.intercept.aopalliance |为 AOP Alliance MethodInvocation 强制实施安全性，例如通过 Spring AOP。
-> access.intercept.aspectj |强制 AspectJ JointPoints 的安全性，将安全对象回调委托给调用方面。
-> access.method |提供 SecurityMetadataSource 实现以通过不同的 AOP 库保护 Java 方法调用。
-> access.prepost |包含用于处理 @PreAuthorize、@PreFilter、@PostAuthorize 和 @PostFilter 注释的基础结构类。
-> access.vote |实施基于投票的授权决策方法。
-> authentication |与用户身份验证相关的核心类和接口，在整个 Spring Security 中使用。
-> authentication.dao |一个依赖于数据访问对象的 AuthenticationProvider。
-> authentication.event |可以发布到 Spring 应用程序上下文的身份验证成功和失败事件。
-> authentication.jaas | JAAS 的身份验证提供程序。
-> authentication.jaas.event | JAAS 身份验证事件可以由 JAAS 身份验证提供程序发布到 Spring 应用程序上下文。
-> authentication.jaas.memory |内存中的 JAAS 实现。
-> [authentication.rcp](#2-3-7、authentication.rcp) |允许远程客户端进行身份验证并获取填充的身份验证对象。
-> authorization |
-> authorization.method |
-> concurrent |
-> context |
-> converter |
-> core |与用户认证和授权相关的核心类和接口，以及安全上下文的维护。
-> core.annotation |
-> core.authority | GrantedAuthority 接口的默认实现。
-> core.authority.mapping |将属性列表（例如角色或 LDAP 组）映射到 GrantedAuthority 列表的策略。
-> core.context |与在请求期间（例如 HTTP 或 RMI 调用）建立安全上下文相关的类。
-> core.parameters |
-> core.session |由 org.springframework.security.core.session.SessionInformation SessionInformation 类提供的会话抽象。
-> core.token |用于构建安全随机令牌的服务。
-> core.userdetails |用于实现用户数据 DAO 的标准接口。
-> core.userdetails.cache | UserCache 的实现。
-> core.userdetails.jdbc |公开基于 JDBC 的身份验证存储库，实现 org.springframework.security.core.userdetails.UserDetailsS​​ervice UserDetailsS​​ervice。
-> core.userdetails.memory |公开内存中的身份验证存储库。
-> jackson2 |混合类以添加 Jackson 序列化支持。
-> provisioning |包含简单的用户和权限组帐户供应接口以及基于 JDBC 的实现。
-> scheduling |
-> task |
-> util |在整个 Spring Security 框架中使用的通用实用程序类。
+> [access](#2-2-1access) |核心访问控制相关代码，包括安全元数据相关类、拦截代码、访问控制注释、EL 支持和中央 AccessDecisionManager 接口的基于投票者的实现。
+> [access.annotation](#2-2-2accessannotation) |支持 JSR-250 和 Spring Security @Secured 注释。
+> [access.event](#2-2-3accessevent) |授权事件和侦听器类。
+> [access.expression](#2-2-4accessexpression) |表达式处理代码支持在 @PreAuthorize、@PreFilter、@PostAuthorize 和 @PostFilter 注释中使用基于 Spring-EL 的表达式。
+> [access.expression.method](#2-2-5accessexpressionmethod) |基于表达式的方法安全的实现。
+> [access.hierarchicalroles](#2-2-6accesshierarchicalroles) |角色层次结构实现。
+> [access.intercept](#2-2-7accessintercept) |抽象级安全拦截类，负责为安全对象强制执行配置的安全约束。
+> [access.intercept.aopalliance](#2-2-8accessinterceptaopalliance) |为 AOP Alliance MethodInvocation 强制实施安全性，例如通过 Spring AOP。
+> [access.intercept.aspectj](#2-2-9accessinterceptaspectj) |强制 AspectJ JointPoints 的安全性，将安全对象回调委托给调用方面。
+> [access.method](#2-2-10accessmethod) |提供 SecurityMetadataSource 实现以通过不同的 AOP 库保护 Java 方法调用。
+> [access.prepost](#2-2-11accessprepost) |包含用于处理 @PreAuthorize、@PreFilter、@PostAuthorize 和 @PostFilter 注释的基础结构类。
+> [access.vote](#2-2-12accessvote) |实施基于投票的授权决策方法。
+> [authentication](#2-3-1authentication) |与用户身份验证相关的核心类和接口，在整个 Spring Security 中使用。
+> [authentication.dao](#2-3-2authenticationdao) |一个依赖于数据访问对象的 AuthenticationProvider。
+> [authentication.event](#2-3-3authenticationevent) |可以发布到 Spring 应用程序上下文的身份验证成功和失败事件。
+> [authentication.jaas](#2-3-4authenticationjaas) | JAAS 的身份验证提供程序。
+> [authentication.jaas.event](#2-3-5authenticationjaasevent) | JAAS 身份验证事件可以由 JAAS 身份验证提供程序发布到 Spring 应用程序上下文。
+> [authentication.jaas.memory](#2-3-6authenticationjaasmemory) |内存中的 JAAS 实现。
+> [authentication.rcp](#2-3-7authenticationrcp) |允许远程客户端进行身份验证并获取填充的身份验证对象。
+> [authorization](#2-3-8authorization) |
+> [authorization.method](#2-3-9authorizationmethod) |
+> [concurrent](#2-4-1concurrent) |
+> [context](#2-5-1context) |
+> [converter](#2-6-1converter) |
+> [core](#2-7-1core) |与用户认证和授权相关的核心类和接口，以及安全上下文的维护。
+> [core.annotation](#2-7-2coreannotation) |
+> [core.authority](#2-7-3coreauthority) | GrantedAuthority 接口的默认实现。
+> [core.authority.mapping](#2-7-4coreauthoritymapping) |将属性列表（例如角色或 LDAP 组）映射到 GrantedAuthority 列表的策略。
+> [core.context](#2-7-5corecontext) |与在请求期间（例如 HTTP 或 RMI 调用）建立安全上下文相关的类。
+> [core.parameters](#2-7-6coreparameters) |
+> [core.session](#2-7-7coresession) |由 org.springframework.security.core.session.SessionInformation SessionInformation 类提供的会话抽象。
+> [core.token](#2-7-8coretoken) |用于构建安全随机令牌的服务。
+> [core.userdetails](#2-7-9coreuserdetails) |用于实现用户数据 DAO 的标准接口。
+> [core.userdetails.cache](#2-7-10coreuserdetailscache) | UserCache 的实现。
+> [core.userdetails.jdbc](#2-7-11coreuserdetailsjdbc) |公开基于 JDBC 的身份验证存储库，实现 org.springframework.security.core.userdetails.UserDetailsS​​ervice UserDetailsS​​ervice。
+> [core.userdetails.memory](#2-7-12coreuserdetailsmemory) |公开内存中的身份验证存储库。
+> [jackson2](#2-8-1jackson2) |混合类以添加 Jackson 序列化支持。
+> [provisioning](#2-9-1provisioning) |包含简单的用户和权限组帐户供应接口以及基于 JDBC 的实现。
+> [scheduling](#2-10-1scheduling) |
+> [task](#2-11-1task) |
+> [util](#2-12-1util) |在整个 Spring Security 框架中使用的通用实用程序类。
 ## 2-2、访问（access）
 ![access-model](./images/core/security-core-access-model.png)
 
@@ -761,6 +761,8 @@
 ## 2-3、认证（authentication）
 ### 2-3-1、authentication
     与用户身份验证相关的核心类和接口，在整个 Spring Security 中使用。
+    最重要的是 AuthenticationManager 及其默认实现 ProviderManager，它维护一个 AuthenticationProviders 列表，它将身份验证请求委托
+    给它。
     
 ![authentication](./images/core/authentication.png)
 
@@ -1615,19 +1617,1342 @@
 >   * 授予权限的表示（如果授予的权限不能表示为具有足够精度的字符串，则为 null）。
 #### 2-7-1-6、Transient
     永远不应跨请求存储的身份验证标记，例如不记名令牌身份验证
+#### 2-7-1-7、ComparableVersion
+    implements java.lang.Comparable<ComparableVersion>
+    
+    版本比较的通用实现。
+    
+    注意：这是来自 https://github.com/apache/maven/blob/maven-3.6.3/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java 的副本 特征：
+    '-'（连字符）和 '.' 的混合 （点）分隔符，
+    字符和数字之间的过渡也构成了分隔符：1.0alpha1 => [1, 0, alpha, 1]
+    无限数量的版本组件，
+    文本中的版本组件可以是数字或字符串，
+    检查字符串是否有众所周知的限定符，并且限定符排序用于版本排序。 众所周知的限定符（不区分大小写）是：
+    阿尔法或
+    β 或 b
+    里程碑或 m
+    rc 或 cr
+    快照
+    （空字符串）或 ga 或 final
+    sp
+    在已知限定符之后考虑未知限定符，具有词汇顺序（始终不区分大小写），
+    连字符通常位于限定符之前，并且总是不如以点开头的东西重要。
+#### 2-7-1-8、SpringSecurityMessageSource
+    All Implemented Interfaces:
+    org.springframework.beans.factory.Aware, org.springframework.beans.factory.BeanClassLoaderAware, 
+    org.springframework.context.HierarchicalMessageSource, org.springframework.context.MessageSource
+    
+    Spring Security 使用的默认 MessageSource。
+    默认情况下，所有需要消息本地化的 Spring Security 类都将使用此类。 但是，所有此类类还将实现 MessageSourceAware，以便应用程序上下文
+    可以注入替代消息源。 因此，此类仅在部署环境未指定替代消息源时使用。
+
+![relation](./images/core/core-ssms.png)
 ### 2-7-2、core.annotation
+![core annotation](./images/core/core-annotation.png)
+#### 2-7-2-1、AuthenticationPrincipal
+    用于将 Authentication.getPrincipal() 解析为方法参数的注释。
+    
+##### errorOnInvalidType boolean
+    如果当前 Authentication.getPrincipal() 的类型不正确时应抛出 ClassCastException，则为 True。 默认为假。
+> * 返回：
+> * 默认：
+>   * 错误的
+##### expression String
+    如果指定，将使用提供的 SpEL 表达式来解析主体。 如果用户需要转换结果，这很方便。
+    例如，也许用户想要解析一个最终的并利用 UserDetailsService 的 CustomUser 对象。 这可以通过返回一个如下所示的对象来处理：
+    
+      public class CustomUserUserDetails extends User {
+          // ...
+          public CustomUser getCustomUser() {
+              return customUser；
+          }
+      }
+     
+    然后用户可以指定一个注释，如下所示：
+      @AuthenticationPrincipal(expression = "customUser")
+ 
+返回：
+要使用的表达式。
+默认：
+“”
+#### 2-7-2-2、CurrentSecurityContext
+    用于将 SecurityContext 解析为方法参数的注释。
+
+##### errorOnInvalidType boolean
+    如果当前 SecurityContext 的类型不正确时应抛出 ClassCastException，则为 True。 默认为假。
+> * 返回：
+>   * 是否在无效类型上出错
+> * 默认：
+>   * 错误的
+##### expression String
+    如果指定，将使用提供的 SpEL 表达式来解析安全上下文。 如果应用程序需要转换结果，这很方便。 例如，如果应用程序需要提取其自定义身份验证实现，则它可以指定适当的 SpEL，如下所示：
+    @CurrentSecurityContext(expression = "authentication") CustomAuthentication authentication
+ 
+> * 返回：
+>   * 要使用的表达式
+> * 默认：
+>   * “”
+    
 ### 2-7-3、core.authority
+    GrantedAuthority 接口的默认实现。
+![authority](./images/core/core-authority.png)
+
+#### 2-7-3-1、GrantedAuthoritiesContainer
+    extends Serializable
+    
+    指示对象存储 GrantedAuthority 对象。
+    通常用于预认证场景，当 AuthenticationDetails 实例也可用于获取用户权限时。
+    
+##### getGrantedAuthorities() Collection<? extends GrantedAuthority>	
+#### 2-7-3-2、AuthorityUtils
+    用于操作 GrantedAuthority 集合等的实用方法。
+    主要供内部使用。
+    
+    域：
+> 修饰符和类型 | 类和描述
+> ---------- | -------
+> static List<GrantedAuthority> | NO_AUTHORITIES 
+
+##### commaSeparatedStringToAuthorityList(String authorityString) List<GrantedAuthority>
+    从逗号分隔的字符串表示形式（例如“ROLE_A、ROLE_B、ROLE_C”）创建一个 GrantedAuthority 对象数组。
+> * 参数：
+>   * authorityString - 逗号分隔的字符串
+> * 返回：
+>   * 通过标记字符串创建的权限
+##### authorityListToSet(Collection<? extends GrantedAuthority> userAuthorities) Set<String> 
+    将 GrantedAuthority 对象数组转换为 Set。
+> * 返回：
+>   * 从每次调用 GrantedAuthority.getAuthority() 获得的一组字符串
+##### createAuthorityList(String... authorities) List<GrantedAuthority>
+    将权限转换为 GrantedAuthority 对象列表。
+> * 参数：
+>   * 权威 - 转换的权威
+> * 返回：
+>   * GrantedAuthority 对象列表
+#### 2-7-3-3、SimpleGrantedAuthority
+    implements GrantedAuthority
+    
+    GrantedAuthority 的基本具体实现。
+    存储授予身份验证对象的权限的字符串表示形式。
+##### getAuthority() String
+    从接口复制的描述：GrantedAuthority
+    如果 GrantedAuthority 可以表示为一个字符串，并且该字符串的精度足以依赖于 AccessDecisionManager（或委托）的访问控制决策，则此方法
+    应返回这样一个字符串。
+    如果 GrantedAuthority 不能以足够的精度表示为 String，则应返回 null。 返回 null 将需要 AccessDecisionManager（或委托）来专门支
+    持 GrantedAuthority 实现，因此除非实际需要，否则应避免返回 null。
+    
+> * 指定者：
+>   * 接口 GrantedAuthority 中的 getAuthority
+> * 返回：
+>   * 被授予的权限的表示（如果被授予的权限不能表示为具有足够精度的字符串，则为 null）。
 ### 2-7-4、core.authority.mapping
+    将属性列表（例如角色或 LDAP 组）映射到 GrantedAuthority 列表的策略。
+    在安全数据存储库和应用程序内所需的逻辑权限之间提供一个间接层。
+
+![core authority mapping](./images/core/core-authority-mapping.png)
+
+#### 2-7-4-1、Attributes2GrantedAuthoritiesMapper
+    由可以将安全属性列表（例如角色或组名称）映射到 Spring Security GrantedAuthority 集合的类实现的接口。
+    
+##### getGrantedAuthorities(Collection<String> attributes) Collection<? extends GrantedAuthority>	
+    此方法的实现应该将给定的属性集合映射到 Spring Security GrantedAuthorities 的集合。 映射过程没有限制； 单个属性可以映射到多个 
+    Spring Security GrantedAuthority，所有属性都可以映射到单个 Spring Security GrantedAuthority，某些属性可能无法映射等。
+
+> * 参数：
+>   * 属性 - 要映射的属性
+> * 返回：
+>   * 从属性创建的权限集合
+#### 2-7-4-2、GrantedAuthoritiesMapper
+    映射接口，可以注入认证层，将存储中加载的权限转换为将在 Authentication 对象中使用的权限。
+    
+##### mapAuthorities(Collection<? extends GrantedAuthority> authorities) Collection<? extends GrantedAuthority>
+
+#### 2-7-4-3、MappableAttributesRetriever
+    由可以检索可映射安全属性字符串列表的类实现的接口（例如，Web 或 EJB 应用程序中所有可用 J2EE 角色的列表）。
+    
+##### getMappableAttributes() Set<String>
+    此方法的实现应返回一组可以映射到 GrantedAuthoritys 的所有字符串属性。
+> * 返回：
+>   * 一组所有可映射的角色
+
 ### 2-7-5、core.context
+    与在请求期间（例如 HTTP 或 RMI 调用）建立安全上下文相关的类。
+    在请求期间，安全上下文通常与当前执行线程相关联，从而使其包含的身份验证信息在应用程序的所有层中均可用。
+    
+    可以通过调用 SecurityContextHolder 随时访问 SecurityContext。
+    
+![core context](./images/core/core-context.png)
+
+#### 2-7-5-1、SecurityContext
+    extends Serializable
+    
+    定义与当前执行线程关联的最低安全信息的接口。
+    安全上下文存储在 SecurityContextHolder 中。
+
+##### getAuthentication() Authentication
+    获取当前经过身份验证的主体或身份验证请求令牌。
+> * 返回：
+>   * 如果没有可用的身份验证信息，则为 Authentication 或 null
+##### setAuthentication(Authentication authentication) void
+    更改当前经过身份验证的主体，或删除身份验证信息。
+> * 参数：
+>   * 身份验证 - 新的身份验证令牌，如果不应存储进一步的身份验证信息，则为 null
+#### 2-7-5-2、SecurityContextChangedListener
+    Functional Interface
+    
+    SecurityContextChangedEvents 的监听器 
+    
+##### securityContextChanged(SecurityContextChangedEvent event)  void
+#### 2-7-5-3、SecurityContextHolderStrategy
+    针对线程存储安全上下文信息的策略。
+    首选策略由 SecurityContextHolder 加载。
+
+##### clearContext() void
+##### createEmptyContext() SecurityContext
+    创建一个新的空上下文实现，供 SecurityContextRepository 实现在第一次创建新上下文时使用。
+> * 返回：
+>   * 空的上下文。
+##### getContext() SecurityContext
+##### setContext(SecurityContext context) void
+
+#### 2-7-5-4、SecurityContextHolder
+    将给定的 SecurityContext 与当前执行线程相关联。
+    此类提供了一系列委托给 SecurityContextHolderStrategy 实例的静态方法。该类的目的是提供一种方便的方法来指定应该用于给定 JVM 的策略。
+    这是 JVM 范围的设置，因为此类中的所有内容都是静态的，以方便调用代码时的使用。
+    
+    要指定应使用哪种策略，您必须提供模式设置。模式设置是定义为静态最终字段的三个有效 MODE_ 设置之一，或者是提供公共无参数构造函数的 
+    SecurityContextHolderStrategy 的具体实现的完全限定类名。
+    
+    有两种方法可以指定所需的策略模式字符串。第一种是通过以 SYSTEM_PROPERTY 为键的系统属性来指定它。第二种是在使用类之前调用​​ 
+    setStrategyName(String) 。如果这两种方法都没有使用，该类将默认使用 MODE_THREADLOCAL，它向后兼容，具有较少的 JVM 不兼容性并且适
+    用于服务器（而 MODE_GLOBAL 绝对不适合服务器使用）。
+
+    域：
+> 修饰符和类型 | 类和描述
+> ---------- | -------
+> private static int |	initializeCount 
+> static String |	MODE_GLOBAL 
+> static String |	MODE_INHERITABLETHREADLOCAL 
+> static String |	MODE_THREADLOCAL 
+> private static SecurityContextHolderStrategy |	strategy 
+> private static String |	strategyName 
+> static String |	SYSTEM_PROPERTY 
+
+##### initialize() void
+##### clearContext() void
+##### getContext() SecurityContext
+##### getInitializeCount() int
+    主要用于故障排除目的，此方法显示类已重新初始化其 SecurityContextHolderStrategy 的次数。
+> * 返回：
+>   * 计数（应该是 1，除非您已调用 setStrategyName(String) 切换到备用策略。
+##### setContext(SecurityContext context) void
+    将新的 SecurityContext 与当前执行线程相关联。
+> * 参数：
+>   * context - 新的 SecurityContext（可能不为空）
+##### setStrategyName(String strategyName) void
+    更改首选策略。 对于给定的 JVM，不要多次调用此方法，因为它会重新初始化策略并对使用旧策略的任何现有线程产生不利影响。
+> * 参数：
+>   * strategyName - 应使用的策略的完全限定类名。
+##### getContextHolderStrategy() SecurityContextHolderStrategy
+    允许检索上下文策略。 参见 SEC-1188。
+> * 返回：
+>   * 用于存储安全上下文的配置策略。
+##### createEmptyContext() SecurityContext
+    将创建新的空上下文委托给配置的策略。
+##### addListener(SecurityContextChangedListener listener) void
+    注册一个侦听器，以便在 SecurityContext 更改时收到通知。 请注意，这不会通知基础身份验证何时更改。 要获得有关身份验证更改的通知，请确
+    保在更改身份验证时使用 setContext(org.springframework.security.core.context.SecurityContext) ，如下所示：
+             SecurityContext context = SecurityContextHolder.createEmptyContext();
+             context.setAuthentication(authentication);
+             SecurityContextHolder.setContext(context);
+     
+    要将其与 Spring 的 ApplicationEvent 支持集成，您可以像这样添加一个侦听器：
+             SecurityContextHolder.addListener(this.applicationContext::publishEvent);
+ 
+> * 参数：
+>   * listener - 当 SecurityContext 更改时要通知的侦听器
+
+#### 2-7-5-5、ReactiveSecurityContextHolder
+    允许将 Spring SecurityContext 获取和设置为 Context。
+
+    域：
+> 修饰符和类型 | 类和描述
+> ---------- | -------
+> Class<?> | SECURITY_CONTEXT_KEY
+
+> 以下的Context均为reactor.util.context.Context
+##### getContext() Mono<SecurityContext>
+##### hasSecurityContext(Context context) boolean
+##### getSecurityContext(Context context) Mono<SecurityContext>
+##### clearContext() Function<Context,Context>
+    从 Reactor 上下文中清除 Mono<SecurityContext>
+> * 返回：
+>   * 返回一个 Mono<Void> ，它只从清除上下文中重放完整和错误信号。
+##### withSecurityContext(Mono<? extends SecurityContext> securityContext) Context
+    创建一个 Reactor Context，其中包含可以合并到另一个 Context 的 Mono<SecurityContext>
+> * 参数：
+>   * securityContext - 要在返回的 Reactor 上下文中设置的 Mono<SecurityContext>
+> * 返回：
+>   * 包含 Mono<SecurityContext> 的 Reactor Context
+##### withAuthentication(Authentication authentication) Context
+    withSecurityContext(Mono) 的快捷方式
+> * 参数：
+>   * 身份验证 - 要使用的身份验证
+> * 返回：
+>   * 包含 Mono<SecurityContext> 的 Reactor Context
 ### 2-7-6、core.parameters
+![core parameters](./images/core/core-parameters.png)
+
+#### 2-7-6-1、AnnotationParameterNameDiscoverer.ParameterNameFactory<T extends AccessibleObject>
+    Functional Interface
+    
+    用于查找参数名称的策略接口。
+##### findParameterAnnotations(T t) Annotation[][]
+    获取指定索引处的注解
+> * 参数：
+>   * t -
+>   * 指数 -
+> * 返回：
+#### 2-7-6-2、AnnotationParameterNameDiscoverer
+    implements org.springframework.core.ParameterNameDiscoverer
+    
+    允许使用任意数量的 Annotation 实例的 value 属性查找参数名称。当需要使用 Spring Security 的方法级别安全性发现接口的参数名称时，这
+    很有用。例如，请考虑以下情况：
+     导入 org.springframework.security.access.method.P;
+    
+      @PostAuthorize("#to == returnObject.to")
+     public Message findMessageByTo(@P("to") String to);
+     
+    我们可以使用以下 AnnotationParameterNameDiscoverer 实现这一点：
+     ParameterAnnotationsNameDiscoverer 发现者 = 新的 ParameterAnnotationsNameDiscoverer(
+                    "org.springframework.security.access.method.P");
+     
+    用户通常将 AnnotationParameterNameDiscoverer 与 PrioritizedParameterNameDiscoverer 结合使用。实际上，Spring Security 的 
+    DefaultSecurityParameterNameDiscoverer（默认情况下与方法级安全性一起使用）扩展了PrioritizedParameterNameDiscoverer，如果在
+    类路径中找到它，它将自动支持 P 和 Spring Data 的 Param 注释。
+    
+    需要注意的是，如果单个参数名称上有受支持的注释，则所有方法都使用 AnnotationParameterNameDiscoverer 进行解析。例如，请考虑以下情况：
+    
+     导入 org.springframework.security.access.method.P;
+    
+      @PostAuthorize("#to == returnObject.to")
+     public Message findMessageByToAndFrom(@P("to") User to, User from);
+     
+    在上一个示例中查找参数的结果将是 new String[] { "to", null}，因为只有一个参数包含注释。这主要是因为PrioritizedParameterNameDiscoverer 
+    的回退是全有或全无操作。
+
+    域：
+> 修饰符和类型 | 类和描述
+> ---------- | -------
+> Set<String> | annotationClassesToUse 
+> AnnotationParameterNameDiscoverer.ParameterNameFactory<Constructor<?>> |	CONSTRUCTOR_METHODPARAM_FACTORY 
+> AnnotationParameterNameDiscoverer.ParameterNameFactory<Method> |	METHOD_METHODPARAM_FACTORY 
+
+##### getParameterNames(Method method) String[]
+##### getParameterNames(Constructor<?> constructor) String[] 
+##### lookupParameterNames(AnnotationParameterNameDiscoverer.ParameterNameFactory<T> parameterNameFactory, T t) <T extends AccessibleObject> String[]
+    如果未找到，则获取参数名称或 null。
+> * 参数：
+>   * parameterNameFactory - 要使用的 AnnotationParameterNameDiscoverer.ParameterNameFactory
+>   * t - 用于查找参数名称的 AccessibleObject（即方法或构造函数）
+> * 返回：
+>   * 参数名称或 null
+##### findParameterName(java.lang.annotation.Annotation[] parameterAnnotations) String
+    从提供的 Annotations 中查找参数名称，如果找不到，则为 null。 搜索是通过查看 annotationClassesToUse 的 value 属性来完成的。
+> * 参数：
+>   * parameterAnnotations - 要搜索的注释。
+> * 返回：
+#### 2-7-6-3、DefaultSecurityParameterNameDiscoverer
+    extends org.springframework.core.PrioritizedParameterNameDiscoverer
+
+    Spring Security 的默认 ParameterNameDiscoverer 会根据在类路径上找到的内容尝试多个 ParameterNameDiscoverer。
+    将使用 AnnotationParameterNameDiscoverer 的实例和 P 作为有效注释。 如果，Spring Data 在类路径上也会添加 Param 注解。
+    如果 Spring 4 在类路径上，则添加 DefaultParameterNameDiscoverer。 这首先尝试使用 JDK 8 信息，然后回退到 LocalVariableTableParameterNameDiscoverer。
+    如果 Spring 4 不在类路径上，则直接添加 LocalVariableTableParameterNameDiscoverer。
+    
+    域：
+> 修饰符和类型 | 类和描述
+> ---------- | -------
+> String |	DATA_PARAM_CLASSNAME 
+> boolean |	DATA_PARAM_PRESENT 
+#### 2-7-6-4、P
+    可与 AnnotationParameterNameDiscoverer 一起使用以指定参数名称的注释。 这对于不能包含参数名称的 JDK 8 之前的接口很有用。
+    
+##### value String
+
 ### 2-7-7、core.session
+    由 org.springframework.security.core.session.SessionInformation SessionInformation 类提供的会话抽象。 SessionRegistry 
+    是基于 Web 的并发会话控制的核心部分，但代码不依赖于任何 servlet API。
+
+![core session](./images/core/core-session.png)
+
+#### 2-7-7-1、SessionRegistry
+    维护 SessionInformation 实例的注册表。
+
+##### getAllPrincipals() List<Object>
+    获取 SessionRegistry 中的所有已知主体。
+> * 返回：
+>   * 每个唯一的主体，然后可以将其呈现给 getAllSessions(Object, boolean)。
+##### getAllSessions(Object principal, boolean includeExpiredSessions) List<SessionInformation>
+    获取指定主体的所有已知会话。 已销毁的会话不会返回。 根据传递的参数，可能会返回已过期的会话。
+> * 参数：
+>   * 主体 - 定位会话（不应为空）
+>   * includeExpiredSessions - 如果为 true，则返回的会话还将包括主体已过期的会话
+> * 返回：
+>   * 此主体的匹配会话（不应返回 null）。
+##### getSessionInformation(String sessionId) SessionInformation
+    获取指定 sessionId 的会话信息。 甚至会返回过期的会话（尽管永远不会返回已销毁的会话）。
+> * 参数：
+>   * sessionId - 查找（不应为空）
+> * 返回：
+>   * 会话信息，如果未找到，则为 null
+##### refreshLastRequest(String sessionId) void
+    更新给定的 sessionId，使其上次请求时间等于当前日期和时间。 如果找不到给定的 sessionId 或会话被标记为过期，则静默返回。
+> * 参数：
+>   * sessionId - 更新上次请求的日期和时间（不应为空）
+##### registerNewSession(String sessionId, Object principal) void
+    为指定的主体注册新会话。 新注册的会话不会被标记为过期。
+> * 参数：
+>   * sessionId - 与主体关联（不应为 null ）
+>   * 主体 - 与会话相关联（不应为空）
+##### removeSessionInformation(java.lang.String sessionId) void
+    删除为指定 sessionId 维护的所有会话信息。 如果找不到 sessionId，该方法会正常返回。
+> * 参数：
+>   * sessionId - 删除信息（不应为空）
+#### 2-7-7-2、AbstractSessionEvent
+    extends org.springframework.context.ApplicationEvent
+    implements Serializable
+    
+    所有会话相关事件的抽象超类。
+    
+#### 2-7-7-3、SessionCreationEvent
+    extends AbstractSessionEvent
+    
+    指示会话（可能由安全上下文表示）已开始的通用会话创建事件。
+
+#### 2-7-7-4、SessionDestroyedEvent
+    extends AbstractSessionEvent
+    
+    指示会话（可能由安全上下文表示）已结束的通用“会话终止”事件。
+
+##### getId() String
+> * 返回：
+>   * 与销毁会话关联的标识符。
+##### getSecurityContexts() List<SecurityContext>
+    提供与销毁会话关联的 SecurityContext 实例。 通常每个会话只有一个安全上下文。
+> * 返回：
+>   * 存储在当前会话中的 SecurityContext 实例（如果没有，则为空列表）。
+#### 2-7-7-5、SessionIdChangedEvent
+    extends AbstractSessionEvent
+
+    指示会话标识符（可能由安全上下文表示）已更改的通用“会话 ID 更改”事件。
+
+##### getNewSessionId() String
+##### getOldSessionId() String
+#### 2-7-7-6、SessionInformation
+    implements java.io.Serializable
+    
+    表示 Spring Security 框架内的会话记录。
+    这主要用于并发会话支持。
+    
+    会话具有三种状态：活动、过期和销毁。 通过 session.invalidate() 或通过 Servlet 容器管理无效的会话可以被视为“已销毁”。 另一方面，
+    “过期”会话是 Spring Security 想要结束的会话，因为它出于某种原因被选择删除（通常是因为它是最近最少使用的会话并且达到了用户的最大会话
+    数）。 过滤器会尽快删除“过期”会话。
+    
+    域：
+> 修饰符和类型 | 类和描述
+> ---------- | -------
+> private boolean |	expired 
+> private java.util.Date |	lastRequest 
+> private java.lang.Object |	principal 
+> private static long |	serialVersionUID 
+> private java.lang.String |	sessionId 
+##### expireNow() void
+##### getLastRequest() Date
+##### getPrincipal() Object
+##### getSessionId() String
+##### isExpired boolean
+##### refreshLastRequest() void
+    将内部 lastRequest 刷新为当前日期和时间。
+#### 2-7-7-7、SessionRegistryImpl
+    implements SessionRegistry, org.springframework.context.ApplicationListener<AbstractSessionEvent>
+
+    SessionRegistry 的默认实现，它侦听在 Spring 应用程序上下文中发布的 SessionDestroyedEvents。
+    要使此类在 Web 应用程序中正常运行，请务必在 web.xml 文件中注册 HttpSessionEventPublisher，以便在会话过期时通知此类。
+    
+    域：
+> 修饰符和类型 | 类和描述
+> ---------- | -------
+> protected org.apache.commons.logging.Log |	logger 
+> private java.util.concurrent.ConcurrentMap<java.lang.Object,java.util.Set<java.lang.String>> |	principals 
+> private java.util.Map<java.lang.String,SessionInformation> |	sessionIds 
+
 ### 2-7-8、core.token
+    用于构建安全随机令牌的服务。
+
+![core token](./images/core/core-token.png)
+
+#### 2-7-8-1、Token
+    TokenService 发行的令牌。
+    分配给令牌的密钥必须充分随机且安全，以便它们可以用作识别唯一的用户会话，这一点很重要。 TokenService 的实现可以自由使用他们选择的加密
+    或编码策略。 强烈建议密钥足够长，以平衡安全性和持久性成本。 关于持久性成本，强烈建议返回的密钥足够小以在 cookie 中进行编码。
+    
+##### getKey() String
+    获取分配给此令牌的随机安全密钥。 将此令牌呈现给 TokenService 将始终返回一个令牌，该令牌等于为该密钥颁发的原始令牌。
+> * 返回：
+>   * 具有适当随机性和安全性的密钥。
+##### getKeyCreationTime() long
+    最初创建令牌密钥的时间可从此方法获得。 请注意，给定的令牌绝不能更改此创建时间。 如有必要，可以从 TokenService 请求新令牌来替换原始令牌。
+> * 返回：
+>   * 创建此令牌密钥的时间，格式与 Date.getTime() 指定的格式相同。
+##### getExtendedInformation() String
+    获取令牌内关联的扩展信息，该信息在首次创建令牌时显示。
+> * 返回：
+>   * 用户指定的扩展信息，如果有的话
+#### 2-7-8-2、TokenService
+    提供一种机制来分配和重建安全的随机令牌。
+    实现只关心按需发行新令牌。 发行的令牌可能包含用户指定的扩展信息。 该令牌还包含一个加密强的、基于字节数组的密钥。 如果需要，这允许使用
+    令牌来识别用户会话。 随后可以将密钥重新提交给 TokenService 以验证和重建与原始 Token 相等的 Token。
+    
+    鉴于此接口提供的密切关注的行为，它可以作为更复杂的基于令牌的解决方案的构建块。 例如，依赖于无状态会话密钥的身份验证系统。 例如，这些可
+    以将用户名放在与密钥关联的用户指定的扩展信息中）。 重要的是要认识到我们不打算扩展此接口以直接提供此类功能。
+##### allocateToken(String extendedInformation) Token
+    强制分配新令牌。
+> * 参数：
+>   * extendedInformation - 令牌中所需的扩展信息（不能为null，但可以为empty）
+> * 返回：
+>   * 以前未发行过的新令牌，并且保证在未来的任何时间都能被此实现的 verifyToken(String) 识别。
+##### verifyToken(String key) Token
+    允许验证此 TokenService 发出的 Token.getKey() 并重建相应的 Token。
+> * 参数：
+>   * 密钥 - 从 Token.getKey() 获得并由此实现创建
+> * 返回：
+>   * 令牌，如果令牌不是由此 TokenService 发行的，则为 null
+#### 2-7-8-3、DefaultToken
+    Token的默认实现
+    
+    域：
+> 修饰符和类型 | 类和描述
+> ---------- | -------
+> private String |	extendedInformation 
+> private String |	key 
+> private long |	keyCreationTime 
+
+#### 2-7-8-4、KeyBasedPersistenceTokenService
+    implements TokenService, org.springframework.beans.factory.InitializingBean
+    
+    TokenService 的基本实现，兼容集群，跨机器重启，不需要数据库持久化。
+    密钥以以下格式生成：
+    
+    Base64(creationTime + ":" + hex(pseudoRandomNumber) + ":" + extendedInformation + ":" + Sha512Hex(creationTime + ":" 
+    + hex(pseudoRandomNumber) + ":" + extendedInformation + ":" + serverSecret) )
+    
+    上面的creationTime、tokenKey和extendedInformation与Token中存储的相同。 Sha512Hex 包含相同的有效负载，以及一个 serverSecret。
+    
+    serverSecret 每毫秒都在变化。它依赖于两个静态服务器端机密。第一个是密码，第二个是服务器整数。对于随后被识别的任何已发布密钥，这两者都
+    必须保持不变。任何毫秒内适用的 serverSecret 由密码 + ":" + (creationTime % serverInteger) 计算。这种方法进一步混淆了实际的服务
+    器秘密，并使计算服务器秘密的尝试在实用性上更加有限（因为任何虚假令牌都将被迫具有等于计算出的哈希值的创建时间）。回想一下，依赖于令牌服
+    务的框架功能在任何情况下都应该拒绝相对较旧的令牌。
+    
+    对此类的进一步考虑是对加密强伪随机数的要求。为此，推荐使用 SecureRandomFactoryBean 注入属性。
+    
+    此实现在内部使用 UTF-8 编码进行字符串操作。
+#### 2-7-8-5、SecureRandomFactoryBean
+    implements org.springframework.beans.factory.FactoryBean<java.security.SecureRandom>
+    
+    创建一个 SecureRandom 实例。
+    
+    域：
+> 修饰符和类型 | 类和描述
+> ---------- | -------
+> private java.lang.String |	algorithm 
+> private org.springframework.core.io.Resource |	seed 
+##### getObject() java.security.SecureRandom
+> * 指定者：
+>   * 接口 org.springframework.beans.factory.FactoryBean<java.security.SecureRandom> 中的 getObject
+> * 抛出：
+>   * java.lang.Exception
+##### getObjectType() Class<java.security.SecureRandom>
+##### isSingleton() boolean
+##### setAlgorithm(String algorithm) void
+    允许指定伪随机数生成器 (PRNG) 算法。 默认为“SHA1PRNG”。
+> * 参数：
+>   * 算法 - 使用（强制）
+##### setSeed(org.springframework.core.io.Resource seed) void
+    允许用户指定将充当 SecureRandom 实例的种子的资源。 具体来说，资源将被读入 InputStream 并将这些字节呈现给 SecureRandom.setSeed(byte[]) 
+    方法。 请注意，这将只是补充而不是替换现有种子。 因此，使用这种方法设置种子总是安全的（它永远不会降低随机性）。
+> * 参数：
+>   * 种子 - 使用，如果不需要额外的种子，则为 null
+
+#### 2-7-8-6、Sha512DigestUtils
+    提供 SHA512 摘要方法。
+    基于 Commons Codec，目前不提供 SHA512 支持。
+##### getSha512Digest() java.security.MessageDigest
+    返回一个 SHA 摘要。
+> * 返回：
+>   * 一个 SHA 摘要实例。
+> * 抛出：
+>   * java.lang.RuntimeException - 捕获到 NoSuchAlgorithmException 时。
+##### sha(byte[] data) byte[]
+    计算 SHA 摘要并以 byte[] 形式返回值。
+> * 参数：
+>   * data - 要消化的数据
+> * 返回：
+>   * SHA摘要
+##### sha(String data) byte[]
+##### shaHex(byte[] data) String
+##### shaHex(String data) String
+
 ### 2-7-9、core.userdetails
+    用于实现用户数据 DAO 的标准接口。
+    可以是传统的 UserDetailsService，它使用唯一的用户名来标识用户，或者，对于更复杂的要求，AuthenticationUserDetailsService。
+
+![core userdetails](./images/core/core-userdetails.png)
+#### 2-7-9-1、AuthenticationUserDetailsService
+    允许基于 Authentication 对象检索 UserDetails 对象的接口。
+
+##### loadUserDetails(T token) UserDetails
+> * 参数：
+>   * token - 预先认证的认证令牌
+> * 返回：
+>   * 给定身份验证令牌的 UserDetails，永远不会为空。
+> * 抛出：
+>   * UsernameNotFoundException - 如果无法找到给定身份验证令牌的用户详细信息   
+    
+#### 2-7-9-2、ReactiveUserDetailsPasswordService
+    用于更改 UserDetails 密码的 API。
+##### updatePassword(UserDetails user, String newPassword) Mono<UserDetails>
+    修改指定用户的密码。 这应该会更改持久用户存储库（数据库、LDAP 等）中的用户密码。
+> * 参数：
+>   * user - 修改密码的用户
+>   * newPassword - 要更改的密码
+> * 返回：
+>   * 使用新密码更新的 UserDetails
+#### 2-7-9-3、ReactiveUserDetailsService
+    用于按用户名查找 UserDetails 的 API。
+##### findByUsername(java.lang.String username) Mono<UserDetails>
+    按用户名查找 UserDetails。
+> * 参数：
+>   * username - 要查找的用户名
+> * 返回：
+>   * 用户详细信息。 不能为空
+#### 2-7-9-4、UserCache
+    提供 UserDetails 对象的缓存。
+    实现应提供适当的方法来设置其缓存参数（例如生存时间）和/或在实体正常到期之前强制删除实体。 这些不是 UserCache 接口合同的一部分，因为它
+    们因使用的缓存系统类型（内存、磁盘、集群、混合等）而异。
+    
+    缓存通常只在不维护服务器端状态的应用程序中需要，例如远程客户端或 Web 服务。 然后在每次调用时都会提供身份验证凭据，访问数据库或其他持久
+    存储机制进行验证的开销会很大。 在这种情况下，您将配置一个缓存来存储 UserDetails 信息，而不是每次都加载它。
+    
+    也可以看看：
+    AbstractUserDetailsAuthenticationProvider
+##### getUserFromCache(String username) UserDetails
+    从缓存中获取 UserDetails。
+> * 参数：
+>   * username - 用于将用户放入缓存的 User.getUsername()
+> * 返回：
+>   * 如果找不到用户或缓存条目已过期，则填充的 UserDetails 或 null
+##### putUserInCache(UserDetails user) void
+    在缓存中放置一个 UserDetails。 用户名是用于随后检索 UserDetails 的密钥。
+> * 参数：
+>   * user - 要放置在缓存中的完全填充的 UserDetails
+##### removeUserFromCache(String username) void
+    从缓存中删除指定的用户。 用户名是用于删除用户的密钥。 如果没有找到用户，该方法应该简单地返回（不抛出异常）。
+    某些缓存实现可能不支持从缓存中逐出，在这种情况下，它们应该提供适当的行为以在其文档中、通过异常或通过日志消息更改用户。
+    
+> * 参数：
+>   * 用户名 - 从缓存中驱逐
+#### 2-7-9-5、UserDetails
+    extends java.io.Serializable
+    
+    提供核心用户信息。
+    出于安全目的，Spring Security 不直接使用实现。 它们只是存储用户信息，然后将这些信息封装到 Authentication 对象中。 这允许将非安全
+    相关的用户信息（例如电子邮件地址、电话号码等）存储在方便的位置。
+    
+    具体的实现必须特别小心，以确保为每个方法详细说明的非空契约得到执行。 请参阅 User 以获取参考实现（您可能希望在代码中扩展或使用它）。
+    
+##### getAuthorities() Collection<? extends GrantedAuthority>
+    返回授予用户的权限。 不能返回空值。
+> * 返回：
+>   * 权限，按自然键排序（从不为空）
+##### getPassword() String
+    返回用于验证用户的密码。
+> * 返回：
+>   * 密码
+##### getUsername() String
+    返回用于验证用户的用户名。 不能返回空值。
+> * 返回：
+>   * 用户名（从不为空）
+##### isAccountNonExpired() boolean
+    指示用户的帐户是否已过期。 无法验证过期帐户。
+> * 返回：
+>   * 如果用户的帐户有效（即未过期），则为 true，如果不再有效（即已过期），则为 false
+##### isAccountNonLocked() boolean
+    指示用户是被锁定还是未锁定。 无法对锁定的用户进行身份验证。
+> * 返回：
+>   * 如果用户没有被锁定，则为 true，否则为 false
+##### isCredentialsNonExpired() boolean
+    指示用户的凭据（密码）是否已过期。 过期的凭据会阻止身份验证。
+> * 返回：
+>   * 如果用户的凭据有效（即未过期），则为 true，如果不再有效（即已过期），则为 false
+##### isEnabled() boolean
+    指示用户是启用还是禁用。 无法对禁用的用户进行身份验证。
+> * 返回：
+>   * 如果用户已启用，则为 true，否则为 false
+
+#### 2-7-9-6、UserDetailsChecker
+    由使用 UserDetailsService 检查加载的 UserDetails 对象状态的类调用。 通常，这将涉及检查与帐户关联的各种标志，并在无法使用信息时引
+    发异常（例如，如果用户帐户被锁定或禁用），但自定义实现可以执行它希望的任何检查。
+    目的是该接口应该仅用于检查与用户关联的持久数据。 它不应参与根据提交的身份验证请求做出任何身份验证决定。
+##### check(UserDetails toCheck) void
+    检查用户
+> * 参数：
+>   * toCheck - 应检查其状态的 UserDetails 实例。
+#### 2-7-9-7、UserDetailPasswordService
+    用于更改 UserDetails 密码的 API。
+##### updatePassword(UserDetails user, java.lang.String newPassword) UserDetails
+    修改指定用户的密码。 这应该会更改持久用户存储库（数据库、LDAP 等）中的用户密码。
+> * 参数：
+>   * user - 修改密码的用户
+>   * newPassword - 要更改的密码，由配置的 PasswordEncoder 编码
+> * 返回：
+>   * 使用新密码更新的 UserDetails
+#### 2-7-9-8、UserDetailService
+    加载用户特定数据的核心接口。
+    它在整个框架中用作用户 DAO，并且是 DaoAuthenticationProvider 使用的策略。
+    
+    该接口只需要一种只读方法，这简化了对新数据访问策略的支持。
+##### loadUserByUsername(java.lang.String username) UserDetails
+    根据用户名定位用户。 在实际实现中，搜索可能区分大小写，也可能不区分大小写，具体取决于实现实例的配置方式。 在这种情况下，返回的 
+    UserDetails 对象的用户名可能与实际请求的用户名不同。
+> * 参数：
+>   * username - 标识需要其数据的用户的用户名。
+> * 返回：
+>   * 完全填充的用户记录（从不为空）
+> * 抛出：
+>   * UsernameNotFoundException - 如果找不到用户或用户没有 GrantedAuthority
+#### 2-7-9-9、MapReactiveUserDetailsService
+    implements ReactiveUserDetailsService, ReactiveUserDetailsPasswordService
+    
+    基于 Map 的 ReactiveUserDetailsService 实现
+    
+    域：
+> 修饰符和类型 | 类和描述
+> ---------- | -------
+> Map<java.lang.String,UserDetails> |	users 
+
+##### findByUsername(String username) Mono<UserDetails>
+##### updatePassword(UserDetails user, java.lang.String newPassword) Mono<UserDetails>
+##### withNewPassword(UserDetails userDetails, java.lang.String newPassword) UserDetails
+##### getKey(java.lang.String username) String
+#### 2-7-9-10、User
+    implements UserDetails, CredentialsContainer
+    
+    对 UserDetailsService 检索的核心用户信息进行建模。
+    开发人员可以直接使用这个类、子类化它，或者从头开始编写他们自己的 UserDetails 实现。
+    
+    equals 和 hashcode 实现仅基于 username 属性，因为目的是查找同一用户主体对象（例如，在用户注册表中）将匹配对象代表同一用户的位置，
+    而不仅仅是所有属性（ 权限，例如密码）相同。
+    
+    请注意，此实现不是一成不变的。 它实现了 CredentialsContainer 接口，以允许在身份验证后删除密码。 如果您将实例存储在内存中并重用它们，
+    这可能会导致副作用。 如果是这样，请确保每次调用时都从 UserDetailsService 返回一个副本。
+    
+    使用建造者模式
+
+    嵌套类
+> 修饰符和类型 | 类和描述
+> ---------- | -------
+> private static class | 	User.AuthorityComparator 
+> static class | 	User.UserBuilder (Builds the user to be added.)
+
+    域：
+> 修饰符和类型 | 类和描述
+> ---------- | -------
+> private boolean |	accountNonExpired 
+> private boolean |	accountNonLocked 
+> private java.util.Set<GrantedAuthority> |	authorities 
+> private boolean |	credentialsNonExpired 
+> private boolean |	enabled 
+> private static org.apache.commons.logging.Log |	logger 
+> private java.lang.String |	password 
+> private static long |	serialVersionUID 
+> private java.lang.String |	username 
+
+
 ### 2-7-10、core.userdetails.cache
+    UserCache的实现
+
+![core user details cache](./images/core/core-userdetails-cache.png)
+
+#### 2-7-10-1、EhCacheBasedUserCache
+    implements UserCache, org.springframework.beans.factory.InitializingBean
+    
+    使用 Spring IoC 定义的 EHCACHE 缓存用户对象。
+    
+    域：
+> 修饰符和类型 | 类和描述
+> ---------- | -------
+> private net.sf.ehcache.Ehcache |	cache 
+> private static org.apache.commons.logging.Log |	logger 
+#### 2-7-10-2、NullUserCache
+    implements UserCache
+    
+    不执行任何缓存。
+#### 2-7-10-3、SpringCacheBasedUserCache
+    implements UserCache
+    
+    在 Spring 定义的缓存中缓存 UserDetails 实例。
+    
+    域：
+> 修饰符和类型 | 类和描述
+> ---------- | -------
+> private org.springframework.cache.Cache |	cache 
+> private static org.apache.commons.logging.Log |	logger 
+
 ### 2-7-11、core.userdetails.jdbc
+    公开基于 JDBC 的身份验证存储库，实现 org.springframework.security.core.userdetails.UserDetailsService UserDetailsService。
+    
+![core user details jdbc](./images/core/core-userdetails-jdbc.png)
+
+#### 2-7-11-1、JdbcDaoImpl
+    extends org.springframework.jdbc.core.support.JdbcDaoSupport
+    implements UserDetailsService, org.springframework.context.MessageSourceAware
+
+    UserDetailsS​​ervice 实现，它使用 JDBC 查询从数据库中检索用户详细信息（用户名、密码、启用标志和权限）。
+    **默认架构**
+    假设有一个默认的数据库模式，有两个表“用户”和“权限”。
+        **用户表**
+        该表包含用户的登录名、密码和启用状态。
+            **列**
+            用户名
+            密码
+            启用
+        **权限表**
+            **列**
+            用户名
+            权威
+    如果您使用现有架构，则必须设置查询 usersByUsernameQuery 和 authorityByUsernameQuery 以匹配您的数据库设置（请参阅 
+    DEF_USERS_BY_USERNAME_QUERY 和 DEF_AUTHORITIES_BY_USERNAME_QUERY）。
+    为了最大限度地减少向后兼容性问题，此实现不识别用户帐户的到期或用户凭据的到期。但是，它确实识别并尊重用户启用/禁用的列。这应该映射到结果
+    集中的布尔类型（SQL 类型将取决于您使用的数据库）。所有其他列都映射到字符串。
+    
+    **团体支持**
+    可以通过将 enableGroups 属性设置为 true 来启用对基于组的权限的支持（您可能还希望将 enableAuthorities 设置为 false 以直接禁用权
+    限加载）。使用这种方法，权限被分配给组，并且用户的权限基于他们所属的组来确定。最终结果是相同的（加载了包含一组 GrantedAuthority 的 
+    UserDetails），但不同的持久性策略可能更适合某些应用程序的管理。
+    当使用组时，使用表“groups”、“group_members”和“group_authorities”。有关用于加载组权限的默认查询，请参阅 
+    DEF_GROUP_AUTHORITIES_BY_USERNAME_QUERY。同样，您可以通过设置 groupAuthoritiesByUsernameQuery 属性来自定义它，但返回的行的
+    格式应与默认值匹配。
+    
+    域：
+> 修饰符和类型 | 类和描述
+> ---------- | -------
+> private java.lang.String |	authoritiesByUsernameQuery 
+> static java.lang.String |	DEF_AUTHORITIES_BY_USERNAME_QUERY 
+> static java.lang.String |	DEF_GROUP_AUTHORITIES_BY_USERNAME_QUERY 
+> static java.lang.String |	DEF_USERS_BY_USERNAME_QUERY 
+> private boolean |	enableAuthorities 
+> private boolean |	enableGroups 
+> private java.lang.String |	groupAuthoritiesByUsernameQuery 
+> protected org.springframework.context.support.MessageSourceAccessor |	messages 
+> private java.lang.String |	rolePrefix 
+> private boolean |	usernameBasedPrimaryKey 
+> private java.lang.String |	usersByUsernameQuery 
 ### 2-7-12、core.userdetails.memory
-### 2-7-13、jackson2
-### 2-7-14、provisioning
-### 2-7-15、scheduling
-### 2-7-16、task
-### 2-7-17、util
+    公开内存中的身份验证存储库。
+![core user details memory](./images/core/core-userdetails-memory.png)
+
+#### 2-7-12-1、UserAttribute
+    InMemoryUserDetailsManager 使用它来临时存储与用户关联的属性。 
+    
+    域：
+> 修饰符和类型 | 类和描述
+> ---------- | -------
+> private java.util.List<GrantedAuthority> |	authorities 
+> private boolean |	enabled 
+> private java.lang.String |	password 
+##### addAuthority(GrantedAuthority newAuthority) void
+##### getAuthorities() java.util.List<GrantedAuthority>	
+##### getPassword() java.lang.String	
+##### isEnabled() boolean	
+##### isValid() boolean	
+##### setAuthorities(java.util.List<GrantedAuthority> authorities) void	
+##### setAuthoritiesAsString(java.util.List<java.lang.String> authoritiesAsStrings) void
+    从字符串值设置此用户的所有权限。 它将创建必要的 GrantedAuthority 对象。
+> * 参数：
+>   * authorityAsStrings - 列表 <String>
+##### setEnabled(boolean enabled)  void	
+##### setPassword(java.lang.String password) void	
+
+#### 2-7-12-2、UserAttributeEditor
+    extends java.beans.PropertyEditorSupport
+    
+    从逗号分隔的值列表创建 UserAttribute 的属性编辑器。
+    
+##### setAsText(java.lang.String s) void
+> * 指定者：
+>   * 接口 java.beans.PropertyEditor 中的 setAsText
+> * 覆盖：
+>   * 类 java.beans.PropertyEditorSupport 中的 setAsText
+> * 抛出：
+>   * java.lang.IllegalArgumentException
+## 2-8、jackson2
+### 2-8-1、jackson2
+    混合类以添加 Jackson 序列化支持。
+
+![core jackson2](./images/core/core-jackson2.png)
+
+    JsonDeserializer
+#### 2-8-1-1、UnmodifiableSetDeserializer
+    extends com.fasterxml.jackson.databind.JsonDeserializer<java.util.Set>
+    
+    UnmodifiableSetDeserializer 的自定义解串器。
+##### deserialize(com.fasterxml.jackson.core.JsonParser jp, com.fasterxml.jackson.databind.DeserializationContext ctxt)  Set
+#### 2-8-1-2、UnmodifiableListDeserializer
+    extends com.fasterxml.jackson.databind.JsonDeserializer<java.util.List>
+    
+    UnmodifiableListDeserializer 的自定义解串器。
+##### deserialize(com.fasterxml.jackson.core.JsonParser jp, com.fasterxml.jackson.databind.DeserializationContext ctxt) List
+#### 2-8-1-3、UserDeserializer
+    extends com.fasterxml.jackson.databind.JsonDeserializer<User>
+    
+    用户类的自定义反序列化器。 这已经在 UserMixin 注册了。 你也可以直接在你的 mixin 类中使用它。
+    
+    域：
+> 修饰符和类型 | 类和描述
+> ---------- | -------
+> private static com.fasterxml.jackson.core.type.TypeReference<java.util.Set<SimpleGrantedAuthority>> |	SIMPLE_GRANTED_AUTHORITY_SET 
+##### deserialize(com.fasterxml.jackson.core.JsonParser jp, com.fasterxml.jackson.databind.DeserializationContext ctxt) User
+    此方法将创建用户对象。 即使序列化 json 中的密码密钥为空，它也将确保成功创建对象，因为可以通过调用 User.eraseCredentials() 从用户中
+    删除凭据。 在这种情况下，序列化的 json 中不会有任何密码密钥。
+> * 指定者：
+>   * 在 com.fasterxml.jackson.databind.JsonDeserializer<User> 类中反序列化
+> * 参数：
+>   * jp - JsonParser
+>   * ctxt - 反序列化上下文
+> * 返回：
+>   * 用户
+> * 抛出：
+>   * java.io.IOException - 如果 IO 期间发生异常
+>   * com.fasterxml.jackson.core.JsonProcessingException - 如果在 JSON 处理过程中发生错误
+#### 2-8-1-4、UsernamePasswordAuthenticationTokenDeserializer
+    extends com.fasterxml.jackson.databind.JsonDeserializer<UsernamePasswordAuthenticationToken>
+    
+    UsernamePasswordAuthenticationToken 的自定义解串器。 在反序列化时，它将根据已验证属性的值调用合适的构造函数。 它将确保令牌的状态不得更改。
+    这个反序列化器已经用 UsernamePasswordAuthenticationTokenMixin 注册，但你也可以用你自己的 mixin 类注册它。
+    
+    域：
+> 修饰符和类型 | 类和描述
+> ---------- | -------
+> private static com.fasterxml.jackson.core.type.TypeReference<java.util.List<GrantedAuthority>> |	GRANTED_AUTHORITY_LIST 
+  private static com.fasterxml.jackson.core.type.TypeReference<java.lang.Object> |	OBJECT 
+
+##### deserialize(com.fasterxml.jackson.core.JsonParser jp, com.fasterxml.jackson.databind.DeserializationContext ctxt) UsernamePasswordAuthenticationToken
+    此方法从序列化的 json 构造 UsernamePasswordAuthenticationToken 对象。
+> * 指定者：
+>   * 在 com.fasterxml.jackson.databind.JsonDeserializer<UsernamePasswordAuthenticationToken> 类中反序列化
+> * 参数：
+>   * jp - JsonParser
+>   * ctxt - 反序列化上下文
+> * 返回：
+>   * 用户
+> * 抛出：
+>   * java.io.IOException - 如果 IO 期间发生异常
+>   * com.fasterxml.jackson.core.JsonProcessingException - 如果在 JSON 处理过程中发生错误
+##### getCredentials(com.fasterxml.jackson.databind.JsonNode credentialsNode) Object
+##### getPrincipal(com.fasterxml.jackson.databind.ObjectMapper mapper, com.fasterxml.jackson.databind.JsonNode principalNode) Object
+> * 抛出:
+>   * java.io.IOException
+>   * com.fasterxml.jackson.core.JsonParseException
+>   * com.fasterxml.jackson.databind.JsonMappingException
+##### readJsonNode(com.fasterxml.jackson.databind.JsonNode jsonNode, java.lang.String field) JsonNode
+
+
+    JsonDeserialize、JsonTypeInfo、JsonAutoDetect、JsonIgnoreProperties
+#### 2-8-1-5、UnmodifiableSetMixin
+    这个 mixin 类用于反序列化 java.util.Collections$UnmodifiableSet 并与各种 AuthenticationToken 实现的 mixin 类一起使用。
+#### 2-8-1-6、UnmodifiableListMixin
+    这个 mixin 类用于反序列化 java.util.Collections$UnmodifiableRandomAccessList 并与各种 AuthenticationToken 实现的 mixin 
+    类一起使用。
+#### 2-8-1-7、UsernamePasswordAuthenticationTokenMixin
+    这个 mixin 类用于序列化/反序列化 UsernamePasswordAuthenticationToken。 此类注册自定义反序列化器 
+    UsernamePasswordAuthenticationTokenDeserializer。 为了使用这个 mixin，你需要再添加 3 个 mixin 类。
+        1.UnmodifiableSetMixin
+        2.SimpleGrantedAuthorityMixin
+        3.UserMixin
+#### 2-8-1-8、UserMixin
+    这个 mixin 类有助于序列化/反序列化用户。 该类还注册了一个自定义反序列化器 UserDeserializer 以成功反序列化 User 对象。 为了使用这个 
+    mixin，您需要在 ObjectMapper 配置中注册另外两个 mixin 类。
+        1.SimpleGrantedAuthorityMixin
+        2.UnmodifiableSetMixin
+#### 2-8-1-9、AnonymousAuthenticationTokenMixin
+    这是一个 Jackson mixin 类，有助于序列化/反序列化 AnonymousAuthenticationToken 类。 要使用此类，您需要使用 ObjectMapper 和 
+    SimpleGrantedAuthorityMixin 注册它，因为 AnonymousAuthenticationToken 包含 SimpleGrantedAuthority。
+#### 2-8-1-10、SimpleGrantedAuthorityMixin
+    Jackson Mixin 类有助于序列化/反序列化 SimpleGrantedAuthority。
+#### 2-8-1-11、RememberMeAuthenticationTokenMixin
+    这个 mixin 类有助于序列化/反序列化 RememberMeAuthenticationToken 类。 要使用这个类，你需要使用 ObjectMapper 和另外 2 个 mixin 
+    类来注册它。
+        1.SimpleGrantedAuthorityMixin
+        2.UserMixin
+        3.UnmodifiableSetMixin
+#### 2-8-1-12、BadCredentialExceptionMixin
+    这个 mixin 类有助于序列化/反序列化 BadCredentialsException 类。 要使用这个类，你需要用 ObjectMapper 注册它。
+    
+> 注意：这个类会将 TypeInfo（类全名）保存到一个名为 @class 的属性中，在序列化中忽略了 cause 和 stackTrace。
+    
+    Module
+#### 2-8-1-13、CoreJackson2Module
+    extends com.fasterxml.jackson.databind.module.SimpleModule
+    
+    spring-security-core 的 Jackson 模块。 该模块注册了 AnonymousAuthenticationTokenMixin、RememberMeAuthenticationTokenMixin、
+    SimpleGrantedAuthorityMixin、UnmodifiableSetMixin、UserMixin 和 UsernamePasswordAuthenticationTokenMixin。 如果默认情
+    况下没有启用默认输入，那么它将启用它，因为需要输入信息来正确序列化/反序列化对象。 为了使用这个模块，只需将这个模块添加到你的 
+    ObjectMapper 配置中。
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.registerModule(new CoreJackson2Module());
+    
+    注意：使用 SecurityJackson2Modules.getModules(ClassLoader) 获取所有安全模块的列表。
+##### setupModule(com.fasterxml.jackson.databind.Module.SetupContext context) void
+
+#### 2-8-1-14、SecurityJackson2Modules
+    这个实用程序类将在类路径中找到所有的 SecurityModules。
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.registerModules(SecurityJackson2Modules.getModules());
+    上面的代码相当于
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL, JsonTypeInfo.As.PROPERTY);
+        mapper.registerModule(new CoreJackson2Module());
+        mapper.registerModule(new CasJackson2Module());
+        mapper.registerModule(new WebJackson2Module());
+        mapper.registerModule(new WebServletJackson2Module());
+        mapper.registerModule(new WebServerJackson2Module());
+        mapper.registerModule(new OAuth2ClientJackson2Module());
+    域：
+> 修饰符和类型 | 类和描述
+> ---------- | -------
+> private static java.lang.String |	javaTimeJackson2ModuleClass 
+  private static org.apache.commons.logging.Log |	logger 
+  private static java.lang.String |	oauth2ClientJackson2ModuleClass 
+  private static java.util.List<java.lang.String> |	securityJackson2ModuleClasses 
+  private static java.lang.String |	webServletJackson2ModuleClass 
+
+##### enableDefaultTyping(com.fasterxml.jackson.databind.ObjectMapper mapper) void
+##### loadAndGetInstance(String className, java.lang.ClassLoader loader) com.fasterxml.jackson.databind.Module
+##### getModules(java.lang.ClassLoader loader) List<com.fasterxml.jackson.databind.Module>
+##### addToModulesList(java.lang.ClassLoader loader,List<Module> modules, String className) void
+##### createAllowlistedDefaultTyping() TypeResolverBuilder<? extends TypeResolverBuilder>
+    创建一个限制允许类型的 TypeResolverBuilder。
+> * 返回：
+>   * 限制允许类型的 TypeResolverBuilder。
+
+    嵌套类：
+##### AllowlistTypeIdResolver
+    implements com.fasterxml.jackson.databind.jsontype.TypeIdResolver
+    
+    如果正在查找的类不在许可名单中，则委托给现有实现并抛出 IllegalStateException 的 TypeIdResolver，不提供显式混合，并且未使用 
+    Jackson 映射进行注释。 见 https://github.com/spring-projects/spring-security/issues/4370
+    
+    域：
+> 修饰符和类型 | 类和描述
+> ---------- | -------
+> private static java.util.Set<java.lang.String> |	ALLOWLIST_CLASS_NAMES 
+  private com.fasterxml.jackson.databind.jsontype.TypeIdResolver |	delegate 
+
+    方法：
+> 修饰符和类型 | 方法和描述
+> ---------- | -------
+> java.lang.String |	getDescForKnownTypeIds() 
+  com.fasterxml.jackson.annotation.JsonTypeInfo.Id |	getMechanism() 
+  java.lang.String |	idFromBaseType() 
+  java.lang.String |	idFromValue(java.lang.Object value) 
+  java.lang.String |	idFromValueAndType(java.lang.Object value, java.lang.Class<?> suggestedType) 
+  void |	init(com.fasterxml.jackson.databind.JavaType baseType) 
+  private boolean |	isInAllowlist(java.lang.String id) 
+  com.fasterxml.jackson.databind.JavaType |	typeFromId(com.fasterxml.jackson.databind.DatabindContext context, java.lang.String id) 
+##### AllowlistTypeResolverBuilder
+    extends com.fasterxml.jackson.databind.ObjectMapper.DefaultTypeResolverBuilder
+    
+    ObjectMapper.DefaultTypeResolverBuilder 的一个实现，它插入一个允许所有的 PolymorphicTypeValidator 并覆盖 TypeIdResolver
+    
+    方法：
+> 修饰符和类型 | 方法和描述
+> ---------- | -------
+> protected com.fasterxml.jackson.databind.jsontype.TypeIdResolver | idResolver(com.fasterxml.jackson.databind.cfg.MapperConfig<?> config, com.fasterxml.jackson.databind.JavaType baseType, com.fasterxml.jackson.databind.jsontype.PolymorphicTypeValidator subtypeValidator, java.util.Collection<com.fasterxml.jackson.databind.jsontype.NamedType> subtypes, boolean forSer, boolean forDeser) 
+
+
+## 2-9、provisioning
+### 2-9-1、provisioning
+    包含简单的用户和权限组帐户供应接口以及基于 JDBC 的实现。
+
+![core provisioning](./images/core/core-provisioning.png)
+
+#### 2-9-1-1、GroupManager
+    允许管理权限组及其成员。
+    通常，这将用于在以下情况下补充 UserDetailsManager 的功能：将应用程序授予的权限组织到组中，而不是直接将用户映射到角色。
+    
+    在这种情况下，用户被分配到组并获得分配给组的权限列表，从而提供更灵活的管理选项。
+
+##### addGroupAuthority(java.lang.String groupName, GrantedAuthority authority) void
+    为组分配新权限。
+##### addUserToGroup(java.lang.String username, java.lang.String group) void
+    使用户成为特定组的成员。
+> * 参数：
+>   * 用户名 - 要授予会员资格的用户。
+>   * group - 用户将被添加到的组的名称。
+##### createGroup(java.lang.String groupName, java.util.List<GrantedAuthority> authorities) void
+    创建具有指定权限列表的新组。
+> * 参数：
+>   * groupName - 新组的名称
+>   * 权限 - 分配给该组的权限。
+##### deleteGroup(java.lang.String groupName) void
+    删除一个组，包括所有成员和权限。
+> * 参数：
+>   * groupName - 要删除的组。
+##### findAllGroups() List<String>
+    返回此组管理员控制的所有组的名称。
+##### findGroupAuthorities(java.lang.String groupName) List<GrantedAuthority>
+    获取分配给组的权限列表。
+##### findUsersInGroup(java.lang.String groupName) List<String>
+    定位属于组成员的用户
+> * 参数：
+>   * groupName - 需要其成员的组
+> * 返回：
+>   * 群组成员的用户名
+##### removeGroupAuthority(java.lang.String groupName, GrantedAuthority authority) void
+    从分配给组的权限中删除权限
+##### removeUserFromGroup(java.lang.String username, java.lang.String groupName) void
+    删除用户的组成员资格。
+> * 参数：
+>   * 用户名 - 用户
+>   * groupName - 要从中删除它们的组
+##### renameGroup(java.lang.String oldName, java.lang.String newName) void
+    在不改变分配的权限或成员的情况下更改组的名称。
+
+#### 2-9-1-2、MutableUserDetails
+    extends UserDetails
+    
+##### setPassword(java.lang.String password)  void
+
+#### 2-9-1-3、UserDetailsManager
+    extends UserDetailsService
+    
+    UserDetailsService 的扩展，提供创建新用户和更新现有用户的能力。
+    
+##### createUser(UserDetails user) void
+##### updateUser(UserDetails user) void
+##### deleteUser(java.lang.String username) void
+##### changePassword(java.lang.String oldPassword, java.lang.String newPassword) void
+    修改当前用户的密码。 这应该会更改持久用户存储库（数据库、LDAP 等）中的用户密码。
+> * 参数：
+>   * oldPassword - 当前密码（如果需要，用于重新验证）
+>   * newPassword - 要更改的密码
+##### userExists(java.lang.String username) boolean
+
+#### 2-9-1-4、InMemoryUserDetailsManager
+    implements UserDetailsManager, UserDetailsPasswordService
+    
+    由内存映射支持的 UserDetailsManager 的非持久实现。
+    主要用于测试和演示目的，不需要完整的持久系统。
+    
+    域：
+> 修饰符和类型 | 类和描述
+> ---------- | -------
+> private AuthenticationManager |	authenticationManager 
+  protected org.apache.commons.logging.Log |	logger 
+  private java.util.Map<java.lang.String,MutableUserDetails> |	users 
+#### 2-9-1-5、JdbcUserDetailsManager
+    extends JdbcDaoImpl
+    implements UserDetailsManager, GroupManager
+    
+    Jdbc 用户管理服务，基于与其父类 JdbcDaoImpl 相同的表结构。
+    为用户和组提供 CRUD 操作。 请注意，如果 enableAuthorities 属性设置为 false，则对 createUser、updateUser 和 deleteUser 的调用
+    将不会存储 UserDetails 中的权限或删除用户的权限。 由于此类无法区分为个人加载的权限还是为个人所属的组加载的权限，因此在使用此实现管理
+    用户时考虑到这一点很重要。
+    
+    域：
+> 修饰符和类型 | 类和描述
+> ---------- | -------
+> private AuthenticationManager	| authenticationManager 
+  private java.lang.String	| changePasswordSql 
+  private java.lang.String	| createAuthoritySql 
+  private java.lang.String	| createUserSql 
+  static java.lang.String	| DEF_CHANGE_PASSWORD_SQL 
+  static java.lang.String	| DEF_CREATE_USER_SQL 
+  static java.lang.String	| DEF_DELETE_GROUP_AUTHORITIES_SQL 
+  static java.lang.String	| DEF_DELETE_GROUP_AUTHORITY_SQL 
+  static java.lang.String	| DEF_DELETE_GROUP_MEMBER_SQL 
+  static java.lang.String	| DEF_DELETE_GROUP_MEMBERS_SQL 
+  static java.lang.String	| DEF_DELETE_GROUP_SQL 
+  static java.lang.String	| DEF_DELETE_USER_AUTHORITIES_SQL 
+  static java.lang.String	| DEF_DELETE_USER_SQL 
+  static java.lang.String	| DEF_FIND_GROUP_ID_SQL 
+  static java.lang.String	| DEF_FIND_GROUPS_SQL 
+  static java.lang.String	| DEF_FIND_USERS_IN_GROUP_SQL 
+  static java.lang.String	| DEF_GROUP_AUTHORITIES_QUERY_SQL 
+  static java.lang.String	| DEF_INSERT_AUTHORITY_SQL 
+  static java.lang.String	| DEF_INSERT_GROUP_AUTHORITY_SQL 
+  static java.lang.String	| DEF_INSERT_GROUP_MEMBER_SQL 
+  static java.lang.String	| DEF_INSERT_GROUP_SQL 
+  static java.lang.String	| DEF_RENAME_GROUP_SQL 
+  static java.lang.String	| DEF_UPDATE_USER_SQL 
+  static java.lang.String	| DEF_USER_EXISTS_SQL 
+  private java.lang.String	| deleteGroupAuthoritiesSql 
+  private java.lang.String	| deleteGroupAuthoritySql 
+  private java.lang.String	| deleteGroupMemberSql 
+  private java.lang.String	| deleteGroupMembersSql 
+  private java.lang.String	| deleteGroupSql 
+  private java.lang.String	| deleteUserAuthoritiesSql 
+  private java.lang.String	| deleteUserSql 
+  private java.lang.String	| findAllGroupsSql 
+  private java.lang.String	| findGroupIdSql 
+  private java.lang.String	| findUsersInGroupSql 
+  private java.lang.String	| groupAuthoritiesSql 
+  private java.lang.String	| insertGroupAuthoritySql 
+  private java.lang.String	| insertGroupMemberSql 
+  private java.lang.String	| insertGroupSql 
+  protected org.apache.commons.logging.Log	| logger 
+  private java.lang.String	| renameGroupSql 
+  private java.lang.String	| updateUserSql 
+  private UserCache	| userCache 
+  private java.lang.String	| userExistsSql 
+#### 2-9-1-6、MutableUser
+    implements MutableUserDetails
+    
+    域：
+> 修饰符和类型 | 类和描述
+> ---------- | -------
+> private UserDetails |	delegate 
+  private java.lang.String |	password 
+  private static long |	serialVersionUID 
+
+## 2-10、scheduling
+### 2-10-1、scheduling
+![scheduling](./images/core/scheduling.png)
+
+#### 2-10-1-1、DelegatingSecurityContextSchedulingTaskExecutor
+    extends DelegatingSecurityContextAsyncTaskExecutor
+    implements org.springframework.scheduling.SchedulingTaskExecutor
+    
+    一个 SchedulingTaskExecutor，它将每个 Runnable 包装在 DelegatingSecurityContextRunnable 中，并将每个 Callable 包装在 
+    DelegatingSecurityContextCallable 中。
+    
+#### 2-10-1-2、DelegatingSecurityContextTaskScheduler
+    implements org.springframework.scheduling.TaskScheduler
+
+    每当触发器指示下一次执行时间时调用它的 TaskScheduler 的实现。
+    
+    域：
+> 修饰符和类型 | 类和描述
+> ---------- | -------
+> private org.springframework.scheduling.TaskScheduler |	delegate 
+  private SecurityContext |	securityContext 
+
+## 2-11、task
+### 2-11-1、task
+
+![task](./images/core/task.png)
+
+#### 2-11-1-1、DelegatingSecurityContextAsyncTaskExecutor
+    extends DelegatingSecurityContextTaskExecutor
+    implements org.springframework.core.task.AsyncTaskExecutor
+    
+    AsyncTaskExecutor 将每个 Runnable 包装在 DelegatingSecurityContextRunnable 中，并将每个 Callable 包装在 
+    DelegatingSecurityContextCallable 中。
+
+    方法：
+> 修饰符和类型 | 方法和描述
+> ---------- | -------
+> void |	execute(java.lang.Runnable task, long startTimeout) 
+  private org.springframework.core.task.AsyncTaskExecutor |	getDelegate() 
+  <T> java.util.concurrent.Future<T> |	submit(java.util.concurrent.Callable<T> task) 
+  java.util.concurrent.Future<?> |	submit(java.lang.Runnable task) 
+
+## 2-12、util
+### 2-12-1、util
+    在整个 Spring Security 框架中使用的通用实用程序类。 供内部使用。
+    这个包应该是独立的——它不应该依赖于框架的其他部分，只依赖于外部库和 JDK。
+    
+![util](./images/core/util.png)
+
+#### 2-12-1-1、FieldUtils
+    提供用于直接操作字段的静态方法。
+    
+    方法：
+> 修饰符和类型 | 方法和描述
+> ---------- | -------
+> static java.lang.reflect.Field |	getField(java.lang.Class<?> clazz, java.lang.String fieldName)
+  static java.lang.Object |	getFieldValue(java.lang.Object bean, java.lang.String fieldName)
+  static java.lang.Object |	getProtectedFieldValue(java.lang.String protectedField, java.lang.Object object) 
+  static void |	setProtectedFieldValue(java.lang.String protectedField, java.lang.Object object, java.lang.Object newValue) 
+#### 2-12-1-2、InMemoryResource
+    extends org.springframework.core.io.AbstractResource
+    
+    Spring Resource 接口的内存实现。
+    用于从 XML 字符串而不是文件创建 bean 工厂。
+    
+    域：
+> 修饰符和类型 | 类和描述
+> ---------- | -------
+> private java.lang.String |	description 
+  private byte[] |	source 
+
+    方法：
+> 修饰符和类型 | 方法和描述
+> ---------- | -------
+> boolean |	equals(java.lang.Object res) 
+  java.lang.String |	getDescription() 
+  java.io.InputStream |	getInputStream() 
+  int |	hashCode() 
+#### 2-12-1-3、MethodInvocationUtils
+    用于创建可在 Spring Security 中使用的 MethodInvocation 的静态实用方法。
+    此类的所有方法都返回一个 SimpleMethodInvocation。
+    
+##### create(java.lang.Object object, java.lang.String methodName, java.lang.Object... args) org.aopalliance.intercept.MethodInvocation
+    为传递的对象上的指定 methodName 生成 MethodInvocation，使用 args 来定位方法。
+> * 参数：
+>   * object - 将用于查找相关方法的对象
+>   * methodName - 要查找的方法的名称
+>   * args - 作为方法签名一部分所需的参数（可以为空）
+> * 返回：
+>   * MethodInvocation ，如果有问题，则为 null
+##### createFromClass(java.lang.Class<?> clazz, java.lang.String methodName) MethodInvocation
+    为传递的类上的指定 methodName 生成 MethodInvocation。 如果不存在具有此名称的不带参数的方法，它将检查类上声明的方法，直到找到与提供
+    的名称匹配的方法。 如果有多个方法名称匹配，则会引发 IllegalArgumentException。
+> * 参数：
+>   * clazz - 将用于查找相关方法的对象类
+>   * methodName - 要查找的方法的名称
+> * 返回：
+>   * MethodInvocation ，如果有问题，则为 null
+##### createFromClass(Object targetObject, Class<?> clazz, String methodName, Class<?>[] classArgs, Object[] args) MethodInvocation
+    为传递的类上的指定 methodName 生成 MethodInvocation，使用 args 来定位方法。
+> * 参数：
+>   * targetObject - 被调用的对象
+>   * clazz - 将用于查找相关方法的对象类
+>   * methodName - 要查找的方法的名称
+>   * classArgs - 定位相关方法签名所需的参数
+>   * args - 应该传递给 SimpleMethodInvocation 的实际参数
+> * 返回：
+>   * MethodInvocation ，如果有问题，则为 null
+#### 2-12-1-4、SimpleMethodInvocation
+    implements org.aopalliance.intercept.MethodInvocation
+
+    表示 AOP 联盟方法调用。
+    
+    域：
+> 修饰符和类型 | 类和描述
+> ---------- | -------
+> private java.lang.Object[] |	arguments 
+  private java.lang.reflect.Method |	method 
+  private java.lang.Object |	targetObject 
+
+    方法：
+> 修饰符和类型 | 方法和描述
+> ---------- | -------
+> java.lang.Object[] |	getArguments() 
+  java.lang.reflect.Method |	getMethod() 
+  java.lang.reflect.AccessibleObject |	getStaticPart() 
+  java.lang.Object |	getThis() 
+  java.lang.Object |	proceed() 
+  java.lang.String |	toString() 
+

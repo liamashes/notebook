@@ -6,6 +6,8 @@
         			throws AccessDeniedException, InsufficientAuthenticationException;
 ### 2、接口设计常用方法
     support：在处理前判断当前接口是否满足需要
+### 3、缓存在不主动设置的情况下，考虑无缓存，可以定义一个空缓存来初始化
+    例：org.springframework.security.core.userdetails.cache.NullUserCache
 
 ## 语法
 ### 1、org.springframework.security.access.intercept.aspectj.aspect.AnnotationSecurityAspect
