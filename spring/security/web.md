@@ -57,6 +57,9 @@
 
 ## 3-2、web
 ### 3-2-1、web
+    Spring Security 的网络安全模块。 可以在此处找到依赖于 Servlet API 的类。
+    
+![web](./images/web/web.png)
 ## 3-3、web.access
 ### 3-3-1、web.access
 ### 3-3-2、web.access.channel
