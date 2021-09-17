@@ -2545,7 +2545,7 @@
 > 修饰符和类型 | 类和描述
 > ---------- | -------
 > private static com.fasterxml.jackson.core.type.TypeReference<java.util.List<GrantedAuthority>> |	GRANTED_AUTHORITY_LIST 
-  private static com.fasterxml.jackson.core.type.TypeReference<java.lang.Object> |	OBJECT 
+> private static com.fasterxml.jackson.core.type.TypeReference<java.lang.Object> |	OBJECT 
 
 ##### deserialize(com.fasterxml.jackson.core.JsonParser jp, com.fasterxml.jackson.databind.DeserializationContext ctxt) UsernamePasswordAuthenticationToken
     此方法从序列化的 json 构造 UsernamePasswordAuthenticationToken 对象。
@@ -2632,10 +2632,10 @@
 > 修饰符和类型 | 类和描述
 > ---------- | -------
 > private static java.lang.String |	javaTimeJackson2ModuleClass 
-  private static org.apache.commons.logging.Log |	logger 
-  private static java.lang.String |	oauth2ClientJackson2ModuleClass 
-  private static java.util.List<java.lang.String> |	securityJackson2ModuleClasses 
-  private static java.lang.String |	webServletJackson2ModuleClass 
+> private static org.apache.commons.logging.Log |	logger 
+> private static java.lang.String |	oauth2ClientJackson2ModuleClass 
+> private static java.util.List<java.lang.String> |	securityJackson2ModuleClasses 
+> private static java.lang.String |	webServletJackson2ModuleClass 
 
 ##### enableDefaultTyping(com.fasterxml.jackson.databind.ObjectMapper mapper) void
 ##### loadAndGetInstance(String className, java.lang.ClassLoader loader) com.fasterxml.jackson.databind.Module
@@ -2657,19 +2657,19 @@
 > 修饰符和类型 | 类和描述
 > ---------- | -------
 > private static java.util.Set<java.lang.String> |	ALLOWLIST_CLASS_NAMES 
-  private com.fasterxml.jackson.databind.jsontype.TypeIdResolver |	delegate 
+> private com.fasterxml.jackson.databind.jsontype.TypeIdResolver |	delegate 
 
     方法：
 > 修饰符和类型 | 方法和描述
 > ---------- | -------
 > java.lang.String |	getDescForKnownTypeIds() 
-  com.fasterxml.jackson.annotation.JsonTypeInfo.Id |	getMechanism() 
-  java.lang.String |	idFromBaseType() 
-  java.lang.String |	idFromValue(java.lang.Object value) 
-  java.lang.String |	idFromValueAndType(java.lang.Object value, java.lang.Class<?> suggestedType) 
-  void |	init(com.fasterxml.jackson.databind.JavaType baseType) 
-  private boolean |	isInAllowlist(java.lang.String id) 
-  com.fasterxml.jackson.databind.JavaType |	typeFromId(com.fasterxml.jackson.databind.DatabindContext context, java.lang.String id) 
+> com.fasterxml.jackson.annotation.JsonTypeInfo.Id |	getMechanism() 
+> java.lang.String |	idFromBaseType() 
+> java.lang.String |	idFromValue(java.lang.Object value) 
+> java.lang.String |	idFromValueAndType(java.lang.Object value, java.lang.Class<?> suggestedType) 
+> void |	init(com.fasterxml.jackson.databind.JavaType baseType) 
+> private boolean |	isInAllowlist(java.lang.String id) 
+> com.fasterxml.jackson.databind.JavaType |	typeFromId(com.fasterxml.jackson.databind.DatabindContext context, java.lang.String id) 
 ##### AllowlistTypeResolverBuilder
     extends com.fasterxml.jackson.databind.ObjectMapper.DefaultTypeResolverBuilder
     
@@ -2759,8 +2759,8 @@
 > 修饰符和类型 | 类和描述
 > ---------- | -------
 > private AuthenticationManager |	authenticationManager 
-  protected org.apache.commons.logging.Log |	logger 
-  private java.util.Map<java.lang.String,MutableUserDetails> |	users 
+> protected org.apache.commons.logging.Log |	logger 
+> private java.util.Map<java.lang.String,MutableUserDetails> |	users 
 #### 2-9-1-5、JdbcUserDetailsManager
     extends JdbcDaoImpl
     implements UserDetailsManager, GroupManager
@@ -2774,48 +2774,48 @@
 > 修饰符和类型 | 类和描述
 > ---------- | -------
 > private AuthenticationManager	| authenticationManager 
-  private java.lang.String	| changePasswordSql 
-  private java.lang.String	| createAuthoritySql 
-  private java.lang.String	| createUserSql 
-  static java.lang.String	| DEF_CHANGE_PASSWORD_SQL 
-  static java.lang.String	| DEF_CREATE_USER_SQL 
-  static java.lang.String	| DEF_DELETE_GROUP_AUTHORITIES_SQL 
-  static java.lang.String	| DEF_DELETE_GROUP_AUTHORITY_SQL 
-  static java.lang.String	| DEF_DELETE_GROUP_MEMBER_SQL 
-  static java.lang.String	| DEF_DELETE_GROUP_MEMBERS_SQL 
-  static java.lang.String	| DEF_DELETE_GROUP_SQL 
-  static java.lang.String	| DEF_DELETE_USER_AUTHORITIES_SQL 
-  static java.lang.String	| DEF_DELETE_USER_SQL 
-  static java.lang.String	| DEF_FIND_GROUP_ID_SQL 
-  static java.lang.String	| DEF_FIND_GROUPS_SQL 
-  static java.lang.String	| DEF_FIND_USERS_IN_GROUP_SQL 
-  static java.lang.String	| DEF_GROUP_AUTHORITIES_QUERY_SQL 
-  static java.lang.String	| DEF_INSERT_AUTHORITY_SQL 
-  static java.lang.String	| DEF_INSERT_GROUP_AUTHORITY_SQL 
-  static java.lang.String	| DEF_INSERT_GROUP_MEMBER_SQL 
-  static java.lang.String	| DEF_INSERT_GROUP_SQL 
-  static java.lang.String	| DEF_RENAME_GROUP_SQL 
-  static java.lang.String	| DEF_UPDATE_USER_SQL 
-  static java.lang.String	| DEF_USER_EXISTS_SQL 
-  private java.lang.String	| deleteGroupAuthoritiesSql 
-  private java.lang.String	| deleteGroupAuthoritySql 
-  private java.lang.String	| deleteGroupMemberSql 
-  private java.lang.String	| deleteGroupMembersSql 
-  private java.lang.String	| deleteGroupSql 
-  private java.lang.String	| deleteUserAuthoritiesSql 
-  private java.lang.String	| deleteUserSql 
-  private java.lang.String	| findAllGroupsSql 
-  private java.lang.String	| findGroupIdSql 
-  private java.lang.String	| findUsersInGroupSql 
-  private java.lang.String	| groupAuthoritiesSql 
-  private java.lang.String	| insertGroupAuthoritySql 
-  private java.lang.String	| insertGroupMemberSql 
-  private java.lang.String	| insertGroupSql 
-  protected org.apache.commons.logging.Log	| logger 
-  private java.lang.String	| renameGroupSql 
-  private java.lang.String	| updateUserSql 
-  private UserCache	| userCache 
-  private java.lang.String	| userExistsSql 
+> private java.lang.String	| changePasswordSql 
+> private java.lang.String	| createAuthoritySql 
+> private java.lang.String	| createUserSql 
+> static java.lang.String	| DEF_CHANGE_PASSWORD_SQL 
+> static java.lang.String	| DEF_CREATE_USER_SQL 
+> static java.lang.String	| DEF_DELETE_GROUP_AUTHORITIES_SQL 
+> static java.lang.String	| DEF_DELETE_GROUP_AUTHORITY_SQL 
+> static java.lang.String	| DEF_DELETE_GROUP_MEMBER_SQL 
+> static java.lang.String	| DEF_DELETE_GROUP_MEMBERS_SQL 
+> static java.lang.String	| DEF_DELETE_GROUP_SQL 
+> static java.lang.String	| DEF_DELETE_USER_AUTHORITIES_SQL 
+> static java.lang.String	| DEF_DELETE_USER_SQL 
+> static java.lang.String	| DEF_FIND_GROUP_ID_SQL 
+> static java.lang.String	| DEF_FIND_GROUPS_SQL 
+> static java.lang.String	| DEF_FIND_USERS_IN_GROUP_SQL 
+> static java.lang.String	| DEF_GROUP_AUTHORITIES_QUERY_SQL 
+> static java.lang.String	| DEF_INSERT_AUTHORITY_SQL 
+> static java.lang.String	| DEF_INSERT_GROUP_AUTHORITY_SQL 
+> static java.lang.String	| DEF_INSERT_GROUP_MEMBER_SQL 
+> static java.lang.String	| DEF_INSERT_GROUP_SQL 
+> static java.lang.String	| DEF_RENAME_GROUP_SQL 
+> static java.lang.String	| DEF_UPDATE_USER_SQL 
+> static java.lang.String	| DEF_USER_EXISTS_SQL 
+> private java.lang.String	| deleteGroupAuthoritiesSql 
+> private java.lang.String	| deleteGroupAuthoritySql 
+> private java.lang.String	| deleteGroupMemberSql 
+> private java.lang.String	| deleteGroupMembersSql 
+> private java.lang.String	| deleteGroupSql 
+> private java.lang.String	| deleteUserAuthoritiesSql 
+> private java.lang.String	| deleteUserSql 
+> private java.lang.String	| findAllGroupsSql 
+> private java.lang.String	| findGroupIdSql 
+> private java.lang.String	| findUsersInGroupSql 
+> private java.lang.String	| groupAuthoritiesSql 
+> private java.lang.String	| insertGroupAuthoritySql 
+> private java.lang.String	| insertGroupMemberSql 
+> private java.lang.String	| insertGroupSql 
+> protected org.apache.commons.logging.Log	| logger 
+> private java.lang.String	| renameGroupSql 
+> private java.lang.String	| updateUserSql 
+> private UserCache	| userCache 
+> private java.lang.String	| userExistsSql 
 #### 2-9-1-6、MutableUser
     implements MutableUserDetails
     
@@ -2823,8 +2823,8 @@
 > 修饰符和类型 | 类和描述
 > ---------- | -------
 > private UserDetails |	delegate 
-  private java.lang.String |	password 
-  private static long |	serialVersionUID 
+> private java.lang.String |	password 
+> private static long |	serialVersionUID 
 
 ## 2-10、scheduling
 ### 2-10-1、scheduling
@@ -2846,7 +2846,7 @@
 > 修饰符和类型 | 类和描述
 > ---------- | -------
 > private org.springframework.scheduling.TaskScheduler |	delegate 
-  private SecurityContext |	securityContext 
+> private SecurityContext |	securityContext 
 
 ## 2-11、task
 ### 2-11-1、task
@@ -2864,9 +2864,9 @@
 > 修饰符和类型 | 方法和描述
 > ---------- | -------
 > void |	execute(java.lang.Runnable task, long startTimeout) 
-  private org.springframework.core.task.AsyncTaskExecutor |	getDelegate() 
-  <T> java.util.concurrent.Future<T> |	submit(java.util.concurrent.Callable<T> task) 
-  java.util.concurrent.Future<?> |	submit(java.lang.Runnable task) 
+> private org.springframework.core.task.AsyncTaskExecutor |	getDelegate() 
+> <T> java.util.concurrent.Future<T> |	submit(java.util.concurrent.Callable<T> task) 
+> java.util.concurrent.Future<?> |	submit(java.lang.Runnable task) 
 
 ## 2-12、util
 ### 2-12-1、util
@@ -2882,9 +2882,9 @@
 > 修饰符和类型 | 方法和描述
 > ---------- | -------
 > static java.lang.reflect.Field |	getField(java.lang.Class<?> clazz, java.lang.String fieldName)
-  static java.lang.Object |	getFieldValue(java.lang.Object bean, java.lang.String fieldName)
-  static java.lang.Object |	getProtectedFieldValue(java.lang.String protectedField, java.lang.Object object) 
-  static void |	setProtectedFieldValue(java.lang.String protectedField, java.lang.Object object, java.lang.Object newValue) 
+> static java.lang.Object |	getFieldValue(java.lang.Object bean, java.lang.String fieldName)
+> static java.lang.Object |	getProtectedFieldValue(java.lang.String protectedField, java.lang.Object object) 
+> static void |	setProtectedFieldValue(java.lang.String protectedField, java.lang.Object object, java.lang.Object newValue) 
 #### 2-12-1-2、InMemoryResource
     extends org.springframework.core.io.AbstractResource
     
@@ -2895,15 +2895,15 @@
 > 修饰符和类型 | 类和描述
 > ---------- | -------
 > private java.lang.String |	description 
-  private byte[] |	source 
+> private byte[] |	source 
 
     方法：
 > 修饰符和类型 | 方法和描述
 > ---------- | -------
 > boolean |	equals(java.lang.Object res) 
-  java.lang.String |	getDescription() 
-  java.io.InputStream |	getInputStream() 
-  int |	hashCode() 
+> java.lang.String |	getDescription() 
+> java.io.InputStream |	getInputStream() 
+> int |	hashCode() 
 #### 2-12-1-3、MethodInvocationUtils
     用于创建可在 Spring Security 中使用的 MethodInvocation 的静态实用方法。
     此类的所有方法都返回一个 SimpleMethodInvocation。
@@ -2943,16 +2943,16 @@
 > 修饰符和类型 | 类和描述
 > ---------- | -------
 > private java.lang.Object[] |	arguments 
-  private java.lang.reflect.Method |	method 
-  private java.lang.Object |	targetObject 
+> private java.lang.reflect.Method |	method 
+> private java.lang.Object |	targetObject 
 
     方法：
 > 修饰符和类型 | 方法和描述
 > ---------- | -------
 > java.lang.Object[] |	getArguments() 
-  java.lang.reflect.Method |	getMethod() 
-  java.lang.reflect.AccessibleObject |	getStaticPart() 
-  java.lang.Object |	getThis() 
-  java.lang.Object |	proceed() 
-  java.lang.String |	toString() 
+> java.lang.reflect.Method |	getMethod() 
+> java.lang.reflect.AccessibleObject |	getStaticPart() 
+> java.lang.Object |	getThis() 
+> java.lang.Object |	proceed() 
+> java.lang.String |	toString() 
 
