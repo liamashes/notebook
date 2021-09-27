@@ -8,6 +8,9 @@
     support：在处理前判断当前接口是否满足需要
 ### 3、缓存在不主动设置的情况下，考虑无缓存，可以定义一个空缓存来初始化
     例：org.springframework.security.core.userdetails.cache.NullUserCache
+### 4、实现某接口的目的，有时是为了包装相应的功能，提供便捷的方式，或【复合优于继承】
+    例1：javax.servlet.GenericServlet
+    例2：参考 effective java 第18点
 
 ## 语法
 ### 1、org.springframework.security.access.intercept.aspectj.aspect.AnnotationSecurityAspect
