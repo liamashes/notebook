@@ -60,7 +60,7 @@
 ## 9、对象 类
 三个基本特征：
 > * 封装
-> * 继承
+> * 继承：只能单继承，mixins类似于多继承
 > * 多态：子类型的指针赋值给父类类型，同一个函数调用会有不同的执行效果
 
 > * 默认构造函数的简写：构造器（this.变量名1，this.变量名2）
@@ -87,3 +87,67 @@
 > * extends与implements区别：
 >   * extends用于复用方法
 >   * implements用于接口规范
+
+
+## 11、抽象
+abstract声明抽象类或接口类，可以extends或implement
+
+## 12、一个类实现多个接口
+
+mixins特性：
+> * 阐述：中文意思是混入，就是在类中混入其他功能；使用该功能实现类似多继承的功能
+> * 2.x中使用mixins的条件：
+>   * 1、作为mixins的类只能继承自Object，不能继承其他类
+>   * 2、作为mixins的类不能有构造函数
+>   * 3、一个类可以mixins多个mixins类
+>   * 4、mixins绝不是继承，也不是接口，而是一种全新的特性
+> * 特点：
+>   * 一个类mixins多个类的时候时，相同签名的方法按照顺序进行覆盖
+>   * 一个mixins其他类的类是其mixins类的子类型
+
+## 13、范型
+范型（类似于java）
+> * 解决冗余代码、类型限制的问题
+
+## 14、库
+> * 内置的库：import 'dart:io(convert/math)' as io
+> * 自定义的：import 'lib/xxx.dart'
+> * pub包管理系统：import 'package:http/http.dart' as http
+
+async（方法变成异步） 和 await（等待异步方法执行完成）
+> * 只有async方法可以使用await关键字调用方法
+> * 调用别的async方法必须使用await关键字
+
+> 包管理    
+
+1、相关库的地址：  
+[https://pub.dev/packages](https://pub.dev/packages)  
+[https://pub.flutter-io.cn/packages](https://pub.flutter-io.cn/packages)  
+[https://pub.dartlang.org/flutter](https://pub.dartlang.org/flutter)  
+
+2、创建一个pubspec.yaml文件，结构如下：  
+    name: xxx  
+    description: A new flutter module project  
+    dependencies:   
+        http: ^0.12.0+2  
+        date_format: ^1.0.6  
+
+3、配置dependencies，运行pub get
+
+> 解决库冲突类： import 'xxx' as xxx;
+
+> 部分导入
+
+如果只导入一部分，两种模式：
+> * 模式一：只导入需要的部分，使用show，如 import 'package:xxx' show foo
+> * 模式二：隐藏不需要的部分，使用hide，如 import 'package:xxx' hide foo
+
+
+## 15、新特性
+> * null safety: 空安全，类型默认不能为空   示例：String a = "123"; a=null;（报错）
+> * ？: 可空类型  示例：String? a = "123"; a=null;
+> * ! : 类型断言  示例：String? a = "123"; a=null; print(a!.length) // 不加类型断言，无法编译；如果a为null，则抛出异常
+> * late : 延迟初始化  示例：用于类的属性的延迟赋值（无构造函数时会报错）
+> * require: 标记任何命名参数（函数或类）不为空（原本是注解，现在是内置修饰符）
+>
+>
