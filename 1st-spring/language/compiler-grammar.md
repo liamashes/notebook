@@ -45,7 +45,7 @@
     语法树
 <p align="center"><img src="images/compile-grammar-tree.png" alt="compile-grammar-tree" height="40%" width="40%"/></p> 
 
-# 有限状态自动机
+# DFA: Deterministic Finite State 确定的有穷自动机
 
 [知乎 DFA&NFA](https://zhuanlan.zhihu.com/p/30009083)
 
@@ -74,3 +74,16 @@
     对于∑上的任何字符串w∈∑*，若存在一条从初始结点到终态结点的路径，在这条路径上的所有边的符号连接称的符号串恰好是w，则w被DFA所识别(或接受、读出)。
     
     DFA所能识别的符号串的全体记为L(M)，称为DFA所识别的语言。
+
+# NFA: Non-Deterministic Finite State Automata
+
+    之前介绍的是确定的有限自动机，即一个状态对于待定的输入字符有一个确定的后继状态。而当一个状态对于特定的输入字符有一个以上的后继状态时，我们称该
+    有限自动机为非确定有限自动机(记做NFA)，其形式定义也是M=(∑,Q,q,F,δ)，且前面的字符定义均和DFA相同，但是δ：Q×∑对应所有Q的任意子集。
+
+    在NFA中能够识别的路径与DFA中定义也相同。
+    
+    对任何一个NFA，都存在一个DFA*使L(M*)=L(M)，这时我们称M*与M等价。构造与M等价的M*的基本方法是让M*的状态对应于M的状态集合。即如果
+    δ(q,a)={q1,q2,...,qn}，则把{q1,q2,...,qn}看作M*的一个状态，即M*中的状态集合Q*的一个元素。
+
+# 正表达式的转换
+## 1、正则 -> NFA（Thompson构造法）
