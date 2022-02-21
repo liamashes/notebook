@@ -76,9 +76,9 @@
 - [ ] 死锁检测和避免
 
 > * 路线
-- [ ] B 站：麻省理工 MIT 6.828（无字幕）：https://www.bilibili.com/video/BV1px411E7ST 
-- [ ] 操作系统（哈工大李治军老师）32讲（全）超清：https://www.bilibili.com/video/BV1d4411v7u7
-- [ ] 哈工大操作系统：https://www.bilibili.com/video/BV1d4411v7u7?from=search&seid=2361361014547524697
+- [ ] [B 站：麻省理工 MIT 6.828（无字幕）](https://www.bilibili.com/video/BV1px411E7ST)
+- [ ] [操作系统（哈工大李治军老师）32讲（全）超清](https://www.bilibili.com/video/BV1d4411v7u7)
+- [ ] [哈工大操作系统](https://www.bilibili.com/video/BV1d4411v7u7?from=search&seid=2361361014547524697)
 - [ ]《深入理解计算机系统 CSAPP》：圣经
 - [ ]《现代操作系统 （第3版）》：难懂的跳过
 
@@ -131,8 +131,8 @@
 - [ ] 服务网关
 
 > * 路线
-- [ ] Dubbo官网 http://dubbo.apache.org/ 可以切到中文版
-- [ ] SpringCloud 官网 https://spring.io/projects/spring-cloud
+- [ ] [Dubbo官网](http://dubbo.apache.org/) 可以切到中文版
+- [ ] [SpringCloud 官网](https://spring.io/projects/spring-cloud)
 - [ ] 《深入理解Apache Dubbo与实战》：配合源码
 - [ ] 《Spring Cloud微服务实战》
 ### 8、常用中间件
@@ -141,10 +141,10 @@
 - [ ] 数据库中间件：ShardingSpere、Mycat
 
 > * 路线（带着问题、目标）
-- [ ] Redis 中文官方网站：http://www.redis.cn/，当做字典学习 redis 常见命令
-- [ ] Kafka 官网：http://kafka.apache.org/
-- [ ] ShardingSpere 官网：http://shardingsphere.apache.org/index_zh.html
-- [ ] Mycat 权威指南在线 PDF 版：http://www.mycat.org.cn/document/mycat-definitive-guide.pdf
+- [ ] [Redis 中文官方网站](http://www.redis.cn/) ，当做字典学习 redis 常见命令
+- [ ] [Kafka 官网](http://kafka.apache.org/)
+- [ ] [ShardingSpere 官网](http://shardingsphere.apache.org/index_zh.html)
+- [ ] [Mycat 权威指南在线 PDF 版](http://www.mycat.org.cn/document/mycat-definitive-guide.pdf)
 - [ ] 《Redis 设计与实现》
 - [ ] 《深入理解Kafka：核心设计与实践原理》
 - [ ] 《分布式数据库架构及企业实践——基于Mycat中间件》
