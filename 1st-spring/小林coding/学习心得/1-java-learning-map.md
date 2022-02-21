@@ -45,7 +45,7 @@
 - [ ] 常用设计模式基本原理
 <p align="center"><img src="images/设计模式.jpg" alt="设计模式" height="40%" width="40%"/></p> 
 
-    路线（多选一，或挑精华）
+> * 路线（多选一，或挑精华）
 - [ ] [UML](https://www.w3cschool.cn/uml_tutorial/) 入门即可
 - [ ] 《Head First 设计模式》
 - [ ] 《大话设计模式》
@@ -60,11 +60,8 @@
 - [ ] 网络安全：非对称加密、数字签名、数字证书
 - [ ] 网络攻击：DDOS、XSS、CSRF 跨域攻击
 
-
-
-    路线
-    经典的面试题：说说你从URL输入到最终页面展现的过程。这一题可以覆盖大部分计网的知识点，可以从 DNS 解析到 HTTP、TCP/IP协议、物理层协议，一直到
-    浏览器渲染页面，你技术功底有多深你就可以聊多深。希望大家学完了也能试着回答一下这个问题。
+> * 路线
+> * 经典的面试题：说说你从URL输入到最终页面展现的过程。这一题可以覆盖大部分计网的知识点，可以从 DNS 解析到 HTTP、TCP/IP协议、物理层协议，一直到浏览器渲染页面，你技术功底有多深你就可以聊多深。希望大家学完了也能试着回答一下这个问题。
 - [ ] 《网络是怎么连接的》
 - [ ] 《图解 HTTP》
 - [ ] 《TCP/IP详解卷1：协议》：挑重点
@@ -78,9 +75,7 @@
 - [ ] 内存管理、虚拟内存
 - [ ] 死锁检测和避免
 
-
-
-    路线
+> * 路线
 - [ ] B 站：麻省理工 MIT 6.828（无字幕）：https://www.bilibili.com/video/BV1px411E7ST 
 - [ ] 操作系统（哈工大李治军老师）32讲（全）超清：https://www.bilibili.com/video/BV1d4411v7u7
 - [ ] 哈工大操作系统：https://www.bilibili.com/video/BV1d4411v7u7?from=search&seid=2361361014547524697
@@ -97,8 +92,7 @@
 - [ ] 异常处理（有点难度）
 - [ ] 泛型（有点难度）
 
-
-    路线
+> * 路线
 - [ ] 《Java 核心技术卷I》：桌面应用跳过
 - [ ] 《阿里巴巴 Java 开发手册》
 - [ ] 《Java 编程思想（Thinking In Java）》：圣经，不用全读，用来查询
@@ -111,8 +105,7 @@
 - [ ] JVM
 - [ ] Java 并发编程（JUC）
 
-
-    路线
+> * 路线
 - [ ] 《Effective Java》：并行
 - [ ] 《Java8 实战》
 - [ ] 《深入理解 Java 虚拟机 第3版》
@@ -124,22 +117,20 @@
 - [ ] Spring 原理
 - [ ] ORM 框架原理
 
-
-    路线
+> * 路线
 - [ ] 《Spring 基础内幕》
 - [ ] 《MyBatis 技术内幕》
 - [ ] 使用框架 -> 懂框架 -> 造轮子
 
 ### 7、微服务框架
-Dubbo框架
-SpringCloud框架
-服务注册与发现
-分布式服务链路追踪
-服务隔离、熔断、降级
-服务网关
+- [ ] Dubbo框架
+- [ ] SpringCloud框架
+- [ ] 服务注册与发现
+- [ ] 分布式服务链路追踪
+- [ ] 服务隔离、熔断、降级
+- [ ] 服务网关
 
-
-     路线
+> * 路线
 - [ ] Dubbo官网 http://dubbo.apache.org/ 可以切到中文版
 - [ ] SpringCloud 官网 https://spring.io/projects/spring-cloud
 - [ ] 《深入理解Apache Dubbo与实战》：配合源码
@@ -149,8 +140,7 @@ SpringCloud框架
 - [ ] 消息队列：Kafka、RocketMQ、RabbitMQ、ActiveMQ、ZeroMQ（推荐 Kafka）
 - [ ] 数据库中间件：ShardingSpere、Mycat
 
-
-    路线（带着问题、目标）
+> * 路线（带着问题、目标）
 - [ ] Redis 中文官方网站：http://www.redis.cn/，当做字典学习 redis 常见命令
 - [ ] Kafka 官网：http://kafka.apache.org/
 - [ ] ShardingSpere 官网：http://shardingsphere.apache.org/index_zh.html
@@ -168,8 +158,7 @@ SpringCloud框架
 - [ ] 数据库事务（ACID）
 - [ ] 数据库锁：乐观锁、悲观锁、表锁、行锁等
 
-    
-    路线
+> * 路线
 - [ ] 《数据库系统概念》
 - [ ] 《MySQL必知必会》
 - [ ] 《MySQL技术内幕 : InnoDB存储引擎》
@@ -179,8 +168,7 @@ SpringCloud框架
 - [ ] 分布式锁：基于关系型数据库（MySQL）、基于 Redis、基于Zookeeper
 - [ ] 分布式 ID：雪花算法（Snowflake）、美团 Leaf
 
-    
-    路线
+> * 路线
 - [ ] 网络上相关文章总结
 ### 11、必须掌握的工具软件
 - [ ] Java 最聪明的 IDE：IntelliJ IDEA （请放弃使用 Eclipse，我有一堆理由睡服你）
