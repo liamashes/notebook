@@ -45,7 +45,7 @@
     语法树
 <p align="center"><img src="images/compile-grammar-tree.png" alt="compile-grammar-tree" height="40%" width="40%"/></p> 
 
-#有限状态自动机
+# 有限状态自动机
 
 [知乎 DFA&NFA](https://zhuanlan.zhihu.com/p/30009083)
 
