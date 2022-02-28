@@ -10,7 +10,7 @@
 ### 1-2-1、javax.servlet
     javax.servlet 包包含许多类和接口，它们描述和定义了 servlet 类与由符合标准的 servlet 容器为此类类的实例提供的运行时环境之间的契约。
 
-![javax servlet](./images/javax-servlet.png)
+![javax servlet](images/javax-servlet.png)
 
 > basic components
 #### 1-2-1-1、Servlet
@@ -2698,7 +2698,7 @@
 ### 1-2-2、javax.servlet.annotation
     javax.servlet.annotation 包包含许多注释，允许用户使用注释来声明 servlet、过滤器、侦听器并为声明的组件指定元数据。
     
-![javax servlet annotation](./images/javax-servlet-annotation.png)
+![javax servlet annotation](images/javax-servlet-annotation.png)
 
 > Enum
 #### 1-2-2-1、ServletSecurity.EmptyRoleSemantic
@@ -2947,7 +2947,7 @@
     javax.servlet.http 包包含许多类和接口，它们描述和定义在 HTTP 协议下运行的 servlet 类与由符合标准的 servlet 容器为此类类的实例提
     供的运行时环境之间的契约。
 
-![javax servlet http](./images/javax-servlet-http.png)
+![javax servlet http](images/javax-servlet-http.png)
 
 > AutoCloseable Flushable
 #### 1-2-4-1、WebConnection

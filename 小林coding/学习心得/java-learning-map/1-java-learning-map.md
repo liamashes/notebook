@@ -43,7 +43,7 @@
 - [ ] UML 基础知识
 - [ ] 设计模式三大分类：创建型、结构型、行为型
 - [ ] 常用设计模式基本原理
-<p align="center"><img src="images/设计模式.jpg" alt="设计模式" height="40%" width="40%"/></p> 
+<p align="center"><img src="../images/设计模式.jpg" alt="设计模式" height="40%" width="40%"/></p> 
 
 > * 路线（多选一，或挑精华）
 - [ ] [UML](https://www.w3cschool.cn/uml_tutorial/) 入门即可
