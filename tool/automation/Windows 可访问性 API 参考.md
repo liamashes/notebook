@@ -485,10 +485,10 @@ Microsoft UI 自动化控件类型是用作众所周知的标识符的属性，�
 > * [当前的 UI 自动化控件类型](#1-5-1-4-3当前的UI自动化控件类型)
 > * [相关话题](#1-5-1-4-4相关话题)
 
-[IUIAutomationElement::CurrentControlType](https://docs.microsoft.com/en-us/windows/desktop/api/UIAutomationClient/nf-uiautomationclient-iuiautomationelement-get_currentcontroltype)
-[IUIAutomationElement::CachedControlType](https://docs.microsoft.com/en-us/windows/desktop/api/UIAutomationClient/nf-uiautomationclient-iuiautomationelement-get_cachedcontroltype)
-[UIA_CustomControlTypeId](https://docs.microsoft.com/en-us/windows/win32/winauto/uiauto-controltype-ids)
-[UIA_LocalizedControlTypePropertyId](https://docs.microsoft.com/en-us/windows/win32/winauto/uiauto-automation-element-propids)
+> * [IUIAutomationElement::CurrentControlType](https://docs.microsoft.com/en-us/windows/desktop/api/UIAutomationClient/nf-uiautomationclient-iuiautomationelement-get_currentcontroltype)
+> * [IUIAutomationElement::CachedControlType](https://docs.microsoft.com/en-us/windows/desktop/api/UIAutomationClient/nf-uiautomationclient-iuiautomationelement-get_cachedcontroltype)
+> * [UIA_CustomControlTypeId](https://docs.microsoft.com/en-us/windows/win32/winauto/uiauto-controltype-ids)
+> * [UIA_LocalizedControlTypePropertyId](https://docs.microsoft.com/en-us/windows/win32/winauto/uiauto-automation-element-propids)
 
 ##### 1-5-1-4-1、UI自动化控制类型要求
 每个 UI 自动化控件类型都有一组与之关联的条件。当提供者将控件类型分配给控件时，提供者必须确保控件满足与该控件类型关联的所有条件。条件包括：
@@ -573,8 +573,8 @@ UI 自动化使用控制模式来表示常见的控制行为。例如，对于�
 > * [控制模式和相关接口](#1-5-1-5-4控制模式和相关接口)
 > * [相关话题](#1-5-1-5-5相关话题)
 
-[IScrollProvider](https://docs.microsoft.com/en-us/windows/desktop/api/UIAutomationCore/nn-uiautomationcore-iscrollprovider)
-[IUIAutomationScrollPattern](https://docs.microsoft.com/en-us/windows/desktop/api/UIAutomationClient/nn-uiautomationclient-iuiautomationscrollpattern)
+> * [IScrollProvider](https://docs.microsoft.com/en-us/windows/desktop/api/UIAutomationCore/nn-uiautomationcore-iscrollprovider)
+> * [IUIAutomationScrollPattern](https://docs.microsoft.com/en-us/windows/desktop/api/UIAutomationClient/nn-uiautomationclient-iuiautomationscrollpattern)
 
 
 ##### 1-5-1-5-1、UI自动化控制模式组件
@@ -645,14 +645,14 @@ ColumnCount 和 RowCount 属性。 大多数控制模式属性都是动态值。
 > * [属性和事件](#1-5-1-6-3属性和事件)
 > * [相关话题](#1-5-1-6-4相关话题)
 
-[IRawElementProviderAdviseEvents::AdviseEventAdded](https://docs.microsoft.com/en-us/windows/desktop/api/UIAutomationCore/nf-uiautomationcore-irawelementprovideradviseevents-adviseeventadded)
-[IUIAutomationElement::GetCachedPropertyValue](https://docs.microsoft.com/en-us/windows/desktop/api/UIAutomationClient/nf-uiautomationclient-iuiautomationelement-getcachedpropertyvalue)
-[IDockProvider::SetDockPosition](https://docs.microsoft.com/en-us/windows/desktop/api/UIAutomationCore/nf-uiautomationcore-idockprovider-setdockposition)
-[IUIAutomationDockPattern::SetDockPosition](https://docs.microsoft.com/en-us/windows/desktop/api/UIAutomationClient/nf-uiautomationclient-iuiautomationdockpattern-setdockposition)
-[UIA_SelectionItem_ElementSelectedEventId](https://docs.microsoft.com/en-us/windows/win32/winauto/uiauto-event-ids)
-[IUIAutomationPropertyChangedEventHandler](https://docs.microsoft.com/en-us/windows/desktop/api/UIAutomationClient/nn-uiautomationclient-iuiautomationpropertychangedeventhandler)
-[IUIAutomation::AddPropertyChangedEventHandler](https://docs.microsoft.com/en-us/windows/desktop/api/UIAutomationClient/nf-uiautomationclient-iuiautomation-addpropertychangedeventhandler)
-[IUIAutomation::AddPropertyChangedEventHandlerNativeArray](https://docs.microsoft.com/en-us/windows/desktop/api/UIAutomationClient/nf-uiautomationclient-iuiautomation-addpropertychangedeventhandlernativearray)
+> * [IRawElementProviderAdviseEvents::AdviseEventAdded](https://docs.microsoft.com/en-us/windows/desktop/api/UIAutomationCore/nf-uiautomationcore-irawelementprovideradviseevents-adviseeventadded)
+> * [IUIAutomationElement::GetCachedPropertyValue](https://docs.microsoft.com/en-us/windows/desktop/api/UIAutomationClient/nf-uiautomationclient-iuiautomationelement-getcachedpropertyvalue)
+> * [IDockProvider::SetDockPosition](https://docs.microsoft.com/en-us/windows/desktop/api/UIAutomationCore/nf-uiautomationcore-idockprovider-setdockposition)
+> * [IUIAutomationDockPattern::SetDockPosition](https://docs.microsoft.com/en-us/windows/desktop/api/UIAutomationClient/nf-uiautomationclient-iuiautomationdockpattern-setdockposition)
+> * [UIA_SelectionItem_ElementSelectedEventId](https://docs.microsoft.com/en-us/windows/win32/winauto/uiauto-event-ids)
+> * [IUIAutomationPropertyChangedEventHandler](https://docs.microsoft.com/en-us/windows/desktop/api/UIAutomationClient/nn-uiautomationclient-iuiautomationpropertychangedeventhandler)
+> * [IUIAutomation::AddPropertyChangedEventHandler](https://docs.microsoft.com/en-us/windows/desktop/api/UIAutomationClient/nf-uiautomationclient-iuiautomation-addpropertychangedeventhandler)
+> * [IUIAutomation::AddPropertyChangedEventHandlerNativeArray](https://docs.microsoft.com/en-us/windows/desktop/api/UIAutomationClient/nf-uiautomationclient-iuiautomation-addpropertychangedeventhandlernativearray)
 
 ##### 1-5-1-6-1、属性标识符
 每个属性都由一个称为属性标识符 (ID) 的 PROPERTYID 数值标识。 提供者和客户端在方法调用（例如 
@@ -726,9 +726,9 @@ Microsoft UI 自动化 API 指定了一组预定义的核心属性、控制模�
 > * [自定义控件类型](#1-5-1-8-1-5自定义控件类型)
 > * [相关话题](#1-5-1-8-1-6相关话题)
 
-[UIA_IsExpandCollapsePatternAvailablePropertyId](https://docs.microsoft.com/en-us/windows/win32/winauto/uiauto-control-pattern-availability-propids)
-[UIA_IsScrollItemPatternAvailablePropertyId](https://docs.microsoft.com/en-us/windows/win32/winauto/uiauto-control-pattern-availability-propids)
-[UIAutomationType](https://docs.microsoft.com/en-us/windows/desktop/api/UIAutomationCore/ne-uiautomationcore-uiautomationtype)
+> * [UIA_IsExpandCollapsePatternAvailablePropertyId](https://docs.microsoft.com/en-us/windows/win32/winauto/uiauto-control-pattern-availability-propids)
+> * [UIA_IsScrollItemPatternAvailablePropertyId](https://docs.microsoft.com/en-us/windows/win32/winauto/uiauto-control-pattern-availability-propids)
+> * [UIAutomationType](https://docs.microsoft.com/en-us/windows/desktop/api/UIAutomationCore/ne-uiautomationcore-uiautomationtype)
 
 ###### 1-5-1-8-1-1、何时使用自定义属性和事件
 在创建自定义属性、事件或控件模式之前，请确保 UI 自动化不提供现有解决方案。 例如，不需要创建自定义的“Click”控件模式，因为 Invoke 控件模式已经描
@@ -802,14 +802,14 @@ UI 自动化包括两种基本类型的属性：自动化元素属性和控制�
 >   * [自定义控制模式的示例实现](#1-5-1-8-2-2-5自定义控制模式的示例实现)
 > * [相关话题](#1-5-1-8-2-3相关话题)
 
-[IUIAutomation](https://docs.microsoft.com/en-us/windows/desktop/api/UIAutomationClient/nn-uiautomationclient-iuiautomation)
-[IRawElementProviderSimple](https://docs.microsoft.com/en-us/windows/desktop/api/UIAutomationCore/nn-uiautomationcore-irawelementprovidersimple)
-[UIAutomationPropertyInfo](https://docs.microsoft.com/en-us/windows/desktop/api/UIAutomationCore/ns-uiautomationcore-uiautomationpropertyinfo)
-[UIAutomationEventInfo](https://docs.microsoft.com/en-us/windows/desktop/api/UIAutomationCore/ns-uiautomationcore-uiautomationeventinfo)
-[UIAutomationType](https://docs.microsoft.com/en-us/windows/desktop/api/UIAutomationCore/ne-uiautomationcore-uiautomationtype)
-[CoCreateInstance](https://docs.microsoft.com/en-us/windows/win32/api/combaseapi/nf-combaseapi-cocreateinstance)
-[CUIAutomationRegistrar](https://docs.microsoft.com/en-us/previous-versions/windows/desktop/legacy/ff384837(v=vs.85))
-[IUIAutomationRegistrar](https://docs.microsoft.com/en-us/windows/desktop/api/UIAutomationCore/nn-uiautomationcore-iuiautomationregistrar)
+> * [IUIAutomation](https://docs.microsoft.com/en-us/windows/desktop/api/UIAutomationClient/nn-uiautomationclient-iuiautomation)
+> * [IRawElementProviderSimple](https://docs.microsoft.com/en-us/windows/desktop/api/UIAutomationCore/nn-uiautomationcore-irawelementprovidersimple)
+> * [UIAutomationPropertyInfo](https://docs.microsoft.com/en-us/windows/desktop/api/UIAutomationCore/ns-uiautomationcore-uiautomationpropertyinfo)
+> * [UIAutomationEventInfo](https://docs.microsoft.com/en-us/windows/desktop/api/UIAutomationCore/ns-uiautomationcore-uiautomationeventinfo)
+> * [UIAutomationType](https://docs.microsoft.com/en-us/windows/desktop/api/UIAutomationCore/ne-uiautomationcore-uiautomationtype)
+> * [CoCreateInstance](https://docs.microsoft.com/en-us/windows/win32/api/combaseapi/nf-combaseapi-cocreateinstance)
+> * [CUIAutomationRegistrar](https://docs.microsoft.com/en-us/previous-versions/windows/desktop/legacy/ff384837(v=vs.85))
+> * [IUIAutomationRegistrar](https://docs.microsoft.com/en-us/windows/desktop/api/UIAutomationCore/nn-uiautomationcore-iuiautomationregistrar)
 
 
 ###### 1-5-1-8-2-1、注册自定义属性和事件
