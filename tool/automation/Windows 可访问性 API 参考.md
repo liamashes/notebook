@@ -423,10 +423,10 @@ UI 自动化提供程序通过在片段中的项目之间实现导航来支持 U
 >   * [内容视图](#1-5-1-3-1-3内容视图)
 > * [相关话题](#1-5-1-3-2相关话题)
 
-[IUIAutomation::RawViewWalker](https://docs.microsoft.com/en-us/windows/desktop/api/UIAutomationClient/nf-uiautomationclient-iuiautomation-get_rawviewwalker)
-[IUIAutomationTreeWalker](https://docs.microsoft.com/en-us/windows/desktop/api/UIAutomationClient/nn-uiautomationclient-iuiautomationtreewalker)
-[IUIAutomationElement::IsControlElement](https://docs.microsoft.com/en-us/windows/desktop/api/UIAutomationClient/nf-uiautomationclient-iuiautomationelement-get_currentiscontrolelement)
-[ControlViewWalker](https://docs.microsoft.com/en-us/windows/desktop/api/UIAutomationClient/nf-uiautomationclient-iuiautomation-get_controlviewwalker)
+> * [IUIAutomation::RawViewWalker](https://docs.microsoft.com/en-us/windows/desktop/api/UIAutomationClient/nf-uiautomationclient-iuiautomation-get_rawviewwalker)
+> * [IUIAutomationTreeWalker](https://docs.microsoft.com/en-us/windows/desktop/api/UIAutomationClient/nn-uiautomationclient-iuiautomationtreewalker)
+> * [IUIAutomationElement::IsControlElement](https://docs.microsoft.com/en-us/windows/desktop/api/UIAutomationClient/nf-uiautomationclient-iuiautomationelement-get_currentiscontrolelement)
+> * [ControlViewWalker](https://docs.microsoft.com/en-us/windows/desktop/api/UIAutomationClient/nf-uiautomationclient-iuiautomation-get_controlviewwalker)
 
 ##### 1-5-1-3-1、UI自动化树的视图
 可以过滤 UI 自动化树以创建仅包含与特定客户端相关的那些 UI 自动化元素的视图。这种方法允许客户自定义通过 UI 自动化呈现的结构以满足他们的特定需求。
