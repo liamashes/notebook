@@ -31,8 +31,8 @@
 
 ## 3、[microsoft UIA](./Windows_accessible_API_reference.md)
 > * [官方文档](https://docs.microsoft.com/en-us/windows/win32/winauto/entry-uiauto-win32)
-> * 头文件信息
->   * [Uianimation.h](https://docs.microsoft.com/en-us/windows/win32/api/uianimation/)
->   * [Uianimationclient.h](https://docs.microsoft.com/en-us/windows/win32/api/uianimationclient/)
->   * [Uianimationcore.h](https://docs.microsoft.com/en-us/windows/win32/api/uianimationcore/)
->   * [Uianimationcoreapi.h](https://docs.microsoft.com/en-us/windows/win32/api/uianimationcoreapi/)
+> * 相关头文件信息
+>   * [uiautomationclient.h](https://docs.microsoft.com/en-us/windows/win32/api/uiautomationclient/)
+>   * [uiautomationcore.h](https://docs.microsoft.com/en-us/windows/win32/api/uiautomationcore/)
+>   * [uiautomationcoreapi.h](https://docs.microsoft.com/en-us/windows/win32/api/uiautomationcoreapi/)
+> * [所有头文件信息汇总](./microsoft-all-headers.pdf)
