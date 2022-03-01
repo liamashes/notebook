@@ -27,6 +27,7 @@
 
 ## 2、[autoit3](./au3.md)
 > * [官方文档](https://www.autoitscript.com/autoit3/docs/)
+> * [应用示例合集](https://www.autoitscript.com/forum/topic/153520-iuiautomation-ms-framework-automate-chrome-ff-ie/#comments)
 
 ## 3、[microsoft UIA](./Windows_accessible_API_reference.md)
 > * [官方文档](https://docs.microsoft.com/en-us/windows/win32/winauto/entry-uiauto-win32)
