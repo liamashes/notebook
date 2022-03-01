@@ -1,10 +1,10 @@
 关于自动测试的相关框架：
-    国内：
-        [pyautogui](https://pyautogui.readthedocs.io/en/latest/index.html)
-        [pyautoit](https://pypi.org/project/PyAutoIt/)
-    国外：
-        [Sikuli](http://www.sikuli.org/)
-        [Autoit3](https://www.autoitscript.com/autoit3/docs/)
+> * 国内：
+>   * [pyautogui](https://pyautogui.readthedocs.io/en/latest/index.html)
+>   * [pyautoit](https://pypi.org/project/PyAutoIt/)
+> * 国外：
+>   * [Sikuli](http://www.sikuli.org/)
+>   * [Autoit3](https://www.autoitscript.com/autoit3/docs/)
         
 框架之间的联系：
 >   关系 | 说明
@@ -82,7 +82,7 @@ Python 2 和 3 上运行。
 > * 基于图标进行定位（参考已实现的demo）
 > * 结合selenium提供的chrome操作的功能，完成浏览器打开、页面元素定位、输入等功能（参考已实现的demo）
 
-## 2、autoit3  
+## 2、[autoit3](./au3.md)
 > * [官方文档](https://www.autoitscript.com/autoit3/docs/)
 
     介绍
