@@ -1,3 +1,4 @@
+# 概述
 关于自动测试的相关框架：
 > * 国内：
 >   * [pyautogui](https://pyautogui.readthedocs.io/en/latest/index.html)
@@ -12,11 +13,11 @@
 >   pyautogui ~= Sikuli | 提供与 Sikuli 提供的相同类型的功能。
 >   pyautoit  -> Autoit3 | Python调用AutoItX3.dll
 
-# 思路
+# 流程
 > * pyautogui的使用
 > * autoit的使用
->   * Microsoft Windows UIA原理及使用
 >   * autoit的语法
+>   * Microsoft Windows UIA原理及使用
 > * pyautogui 和 pyautoit 结合
 
 # 框架内容
