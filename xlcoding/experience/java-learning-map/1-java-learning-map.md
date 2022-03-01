@@ -30,7 +30,8 @@
 
 
 > * 路线（并行）
-- [ ] leetcode 500+
+- [ ]  algorithms 4 (princeton)
+- [ ]  leetcode 500+
 - [ ] 《漫画算法-小灰的算法之旅》
 - [ ] 《剑指 offer》
 - [ ] 《labuladong的算法小抄》
