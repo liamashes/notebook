@@ -21,7 +21,7 @@ Microsoft UI 自动化是一个可访问性框架，它使 Windows 应用程序�
     
 ## 1-2、开发者受众
 
-UI 自动化专为有经验的 C/C++ 开发人员而设计。 一般来说，开发人员需要对组件对象模型 (COM) 对象和接口、Unicode 和 Windows API 编程有一定
+UI 自动化专为有经验的 C/C++ 开发人员而设计。 一般来说，开发人员需要对 [组件对象模型 (COM) ](https://docs.microsoft.com/en-us/windows/win32/com/component-object-model--com--portal) 对象和接口、Unicode 和 Windows API 编程有一定
 程度的了解。
     
 有关托管代码的 UI 自动化的信息，请参阅 MSDN 的 .NET Framework 开发人员指南部分中的 [辅助功能](https://docs.microsoft.com/en-us/dotnet/framework/ui-automation/) 。
@@ -150,9 +150,9 @@ UI 自动化 API 在 Windows 软件开发工具包 (SDK) 中包含的几个不�
 > [UIAutomationCore.h](https://docs.microsoft.com/en-us/windows/win32/api/uiautomationcore/) | 定义 UI 自动化提供程序使用的接口和相关编程元素。
 > [UIAutomationCoreApi.h](https://docs.microsoft.com/en-us/windows/win32/api/uiautomationcoreapi/) | 定义 UI 自动化客户端和提供程序使用的通用常量、GUID、数据类型和结构。 它还包含不推荐使用的节点和控制模式函数的定义。
 > [UIAutomation.h](https://docs.microsoft.com/en-us/windows/win32/api/uiautomation/) | 包括所有其他 UI 自动化头文件。 因为大多数 UI 自动化应用程序需要来自所有 UI 自动化头文件的元素，所以最好将 UIAutomation.h 包含在您的 UI 自动化应用程序项目中，而不是单独包含每个文件。
-##### 1-5-1-1-3、UI自动化模型
-UI 自动化将 UI 的每个元素作为由 IUIAutomationElement 接口表示的对象公开给客户端应用程序。元素包含在树结构中，桌面作为根元素。客户端可以将树的
-原始视图过滤为控制视图或内容视图。通过使用 Windows SDK 中包含的 Inspect 应用程序，可以轻松查看这些结构的标准视图。应用程序还可以创建自定义视图。
+##### 1-5-1-1-3、*UI自动化模型*
+UI 自动化将 UI 的每个元素作为由 [IUIAutomationElement](https://docs.microsoft.com/en-us/windows/desktop/api/UIAutomationClient/nn-uiautomationclient-iuiautomationelement) 接口表示的对象公开给客户端应用程序。元素包含在树结构中，桌面作为根元素。客户端可以将树的
+原始视图过滤为控制视图或内容视图。通过使用 Windows SDK 中包含的 [Inspect](https://docs.microsoft.com/en-us/windows/win32/winauto/inspect-objects) 应用程序，可以轻松查看这些结构的标准视图。应用程序还可以创建自定义视图。
 
 UI 自动化元素公开它所代表的控件或 UI 元素的属性。这些属性之一是控件类型，它将控件或 UI 元素的基本外观和功能定义为单个可识别实体，例如按钮或复选框
 。有关控件类型的详细信息，请参阅 UI 自动化控件类型概述。
@@ -206,7 +206,7 @@ Microsoft Active Accessibility 基于支持双接口的组件对象模型 (COM)�
 引入 UI 自动化时，客户端 API 仅限于托管代码，而提供程序 API 包括托管和非托管实现。 在 Windows 7 中，引入了新的基于 COM 的客户端 API，以便更
 轻松地使用 C/C++ 编写 UI 自动化客户端应用程序。
 ##### 1-5-1-2-2、服务器和客户端
-在 Microsoft Active Accessibility 中，服务器和客户端直接通信，主要通过 IAccessible 接口的服务器实现。
+在 Microsoft Active Accessibility 中，服务器和客户端直接通信，主要通过 [IAccessible](https://docs.microsoft.com/en-us/windows/desktop/api/oleacc/nn-oleacc-iaccessible) 接口的服务器实现。
 
 在 UI 自动化中，核心服务位于服务器（提供者）和客户端之间。 核心服务调用提供者实现的接口并提供附加服务，例如为 UI 元素生成唯一的运行时标识符。 客
 户端应用程序通过创建 CUIAutomation 对象来访问此核心服务。 该对象支持一组独立于提供者接口的客户端接口。 有关详细信息，请参阅创建 CUIAutomation
@@ -402,7 +402,7 @@ IUIAutomationLegacyIAccessiblePattern 的属性更改不会引发 UI 自动化�
 > * [UI 自动化属性概述](#1-5-1-6UI自动化属性概述)
 > * [UI 自动化事件概述](#1-5-1-7UI自动化事件概述)
 
-#### 1-5-1-3、UI自动化树概述
+#### 1-5-1-3、*UI自动化树概述*
 辅助技术产品和测试脚本导航 Microsoft UI 自动化树以收集有关 UI 及其元素的信息。
 
 UI 自动化树中有一个根元素，它代表 Windows 桌面窗口（“桌面”），其子元素代表应用程序窗口。这些子元素中的每一个都可以包含表示 UI 片段的元素，例如
@@ -657,12 +657,12 @@ ColumnCount 和 RowCount 属性。 大多数控制模式属性都是动态值。
 ##### 1-5-1-6-1、属性标识符
 每个属性都由一个称为属性标识符 (ID) 的 PROPERTYID 数值标识。 提供者和客户端在方法调用（例如 
 IRawElementProviderAdviseEvents::AdviseEventAdded 和 IUIAutomationElement::GetCachedPropertyValue）中使用数字 ID 来识别属性请
-求。 有关每个 UI 自动化属性标识符的详细说明，包括每个属性的数据类型和默认值，请参阅属性标识符。
+求。 有关每个 UI 自动化属性标识符的详细说明，包括每个属性的数据类型和默认值，请参阅 [属性标识符](https://docs.microsoft.com/en-us/windows/win32/winauto/uiauto-entry-propids) 。
 ##### 1-5-1-6-2、属性值
 所有属性都是只读的，尽管可以使用作用于控件的方法来更改某些属性，例如 IDockProvider::SetDockPosition（提供者）或 
 IUIAutomationDockPattern::SetDockPosition（客户端）。
 
-有关检索属性值的信息，请参阅从 UI 自动化元素中检索属性。
+有关检索属性值的信息，请参阅 [从 UI 自动化元素中检索属性](https://docs.microsoft.com/en-us/windows/win32/winauto/uiauto-propertiesforclients) 。
 ##### 1-5-1-6-3、属性和事件
 与 UI 自动化中的属性密切相关的是属性更改事件的概念。对于动态属性，客户端应用程序需要一种方法来知道属性值已更改，以便它可以更新其信息缓存或以其他方
 式对新信息做出反应。客户端可以注册以侦听任何属性上的属性更改事件。
@@ -1320,7 +1320,7 @@ TSF 专为需要将输入注入上下文感知场景的应用程序而设计。 
 
 需要对文本存储进行只读访问的可访问技术可以使用文本控制模式，但需要 TSF 的功能来进行上下文感知输入。
 
-有关详细信息，请参阅文本服务框架。
+有关详细信息，请参阅 [文本服务框架](https://docs.microsoft.com/en-us/windows/desktop/TSF/text-services-framework) 。
 ###### 1-5-1-9-1-2、控制类型
 UI Automation Edit 控件类型和 Document 控件类型必须支持 Text 控件模式。为了提高可访问性，Microsoft 建议 ToolTip 和 Text 控件类型也支持
  Text 控件模式，但这不是必需的。
@@ -1335,7 +1335,7 @@ UI 自动化提供程序通过实现 ITextProvider 和 ITextRangeProvider 接口
 ITextRangeProvider::Select 方法。如果控件不支持此功能，则不需要支持这些方法中的任何一种。但是，控件必须通过实现 
 ITextProvider::SupportedTextSelection 属性来公开它支持的文本选择类型。
 
-提供者必须始终支持 TextUnit 常量、TextUnit_Character 和 TextUnit_Document，以及它能够支持的任何其他常量。
+提供者必须始终支持 [TextUnit](https://docs.microsoft.com/en-us/windows/desktop/api/UIAutomationCore/ne-uiautomationcore-textunit) 常量、TextUnit_Character 和 TextUnit_Document，以及它能够支持的任何其他常量。
 
     笔记
     
