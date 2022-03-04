@@ -1,3 +1,28 @@
+    输入输出
+> * StdIn
+> * StdOut
+> * StdDraw
+
+> * BinaryStdIn
+> * BinaryStdOut
+
+    集合
+> * Bag
+> * Stack
+> * Queue
+> * MinPQ、MaxPQ 优先队列
+> * IndexMinPQ、IndexMaxPQ 索引优先队列
+> * ST 符号表
+> * SET 几何
+> * StringST 符号表
+
+    几何对象
+> * Point2D
+> * Interval1D
+> * Interval2D
+
+
+
 > * Accumulator
 > * AcyclicLP
 > * AcyclicSP
@@ -9,7 +34,6 @@
 > * AssignmentProblem
 > * Average
 > * AVLTreeST
-> * Bag
 > * BellmanFordSP
 > * BinaryDump
 > * BinaryIn
@@ -17,8 +41,6 @@
 > * BinaryOut
 > * BinarySearch
 > * BinarySearchST
-> * BinaryStdIn
-> * BinaryStdOut
 > * BinomialMinPQ
 > * Bipartite
 > * BipartiteMatching
@@ -94,14 +116,10 @@
 > * In
 > * IndexBinomialMinPQ
 > * IndexFibonacciMinPQ
-> * IndexMaxPQ
-> * IndexMinPQ
 > * IndexMultiwayMinPQ
 > * InplaceMSD
 > * Insertion
 > * InsertionX
-> * Interval1D
-> * Interval2D
 > * Inversions
 > * KMP
 > * Knuth
@@ -121,11 +139,9 @@
 > * LookupIndex
 > * LSD
 > * LZW
-> * MaxPQ
 > * Merge
 > * MergeBU
 > * MergeX
-> * MinPQ
 > * MSD
 > * Multiway
 > * MultiwayMinPQ
@@ -138,10 +154,8 @@
 > * PatriciaST
 > * Picture
 > * PictureDump
-> * Point2D
 > * Polynomial
 > * PrimMST
-> * Queue
 > * Quick
 > * Quick3string
 > * Quick3way
@@ -161,17 +175,11 @@
 > * Selection
 > * SeparateChainingHashST
 > * SequentialSearchST
-> * SET
 > * Shell
 > * SparseVector
-> * ST
-> * Stack
 > * StaticSETofInts
 > * StdArrayIO
 > * StdAudio
-> * StdDraw
-> * StdIn
-> * StdOut
 > * StdRandom
 > * StdStats
 > * Stopwatch
