@@ -8,10 +8,10 @@
 >   * [Autoit3](https://www.autoitscript.com/autoit3/docs/)
         
 框架之间的联系：
->   关系 | 说明
->   --- | ---
->   pyautogui ~= Sikuli | 提供与 Sikuli 提供的相同类型的功能。
->   pyautoit  -> Autoit3 | Python调用AutoItX3.dll
+>   关系 | 说明 | 优势 | 缺陷
+>   --- | --- | --- | ---
+>   pyautogui ~= Sikuli | 提供与 Sikuli 提供的相同类型的功能 | 提供的功能可以在Windows、Linux、MacOs上使用 | 实现的功能比较基础，定位元素方式较少; 基于图像定位时需要考虑不同系统缩放比例问题
+>   pyautoit  -> Autoit3 | Python调用AutoItX3.dll | 原则上可以实现所有microsoft提供的所有API功能，可设计性强 | 实现起来较为复杂，需要了解win的UIA结构、事件等；仅适用于win系统
 
 # 流程
 > * pyautogui的使用
