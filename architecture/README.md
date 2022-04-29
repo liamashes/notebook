@@ -1,0 +1,9 @@
+Continuous.Architecture.in.Practice.2021.pdf
+Java.The.Complete.Reference.12th.Edition.2021.11.pdf
+OReilly.Building.Event-Driven.Microservices.2020.7.pdf
+OReilly.Building.Microservices.2nd.Edition.2021.8.pdf
+OReilly.Fundamentals.of.Software.Architecture.2020.1.pdf
+OReilly.Learning.Domain-Driven.Design.2021.10.pdf
+OReilly.The.Art.of.Agile.Development.2nd.Edition.2021.10.pdf
+OReilly.The.Software.Architect.Elevator.2020.4.pdf
+Principles.of.Web.API.Design.2021.12.pdf
