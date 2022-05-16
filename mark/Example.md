@@ -1,3 +1,5 @@
+#####
+
 # MarkDown
 ## 1. Headers
 number of # equals the level of the Header
@@ -103,3 +105,15 @@ separating each column with a pipe |:
 ## 14. Special Character
 concat: ∈ ∑
 alpha: δ 
+
+---
+## 15. Mind Map
+[process on official site]
+
++ 中心节点(.mindmap)
+    + [1] leaf1
+
+---
+[To the top](#)
+
+[process on official site]: https://processon.com/diagrams

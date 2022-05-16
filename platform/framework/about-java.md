@@ -856,7 +856,7 @@ class Test{
 ```java
 class Test{
     void test(){
-        String s = "..."
+        String s = "...";
         switch (s) {
             case Object obj -> "..." // total type pattern, so it matches null!
         }
